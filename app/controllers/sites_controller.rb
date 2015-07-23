@@ -1,5 +1,5 @@
 class SitesController < ApplicationController
   def index
-    @sites = Site.all.includes(:articles)
+    @sites = JSON.parse Site.all.to_json(include: :articles)
   end
 end
