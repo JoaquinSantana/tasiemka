@@ -9,4 +9,4 @@
       for site in @state.sites       
         React.DOM.div
           className: 'col-md-4 text-center'
-          React.createElement Site, key: site.id, site: site
+          React.createElement Site, key: site.id, site: site, articles: site.articles

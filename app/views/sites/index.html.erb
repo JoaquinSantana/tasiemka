@@ -1,1 +1,10 @@
 <%= react_component 'Sites', { data: @sites } %>
+
+<% @sites.each do |site| %>
+  <ul class='col-md-4 text-center'>
+    <h2><%= site.name %></h2>
+    <% site.articles.each do |article| %>
+      <li><%= article.title %></li>
+    <% end %>
+  </ul>
+<% end %>
