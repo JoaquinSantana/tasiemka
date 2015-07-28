@@ -16,6 +16,8 @@
       success: (data) =>
       #Displat new articles
         @setState articles: data.articles 
+  position: (article) ->
+    position = @props.site.articles.indexOf(article) + 1;
   render: ->
     React.DOM.div
       className: 'site_wrapper'
@@ -23,5 +25,8 @@
       React.createElement SiteForm, options: @allSite(), siteName: @props.site.name, handleChangeSite: @changeSite
       React.DOM.ul
         className: 'list-unstyled'
+#      console.log(@state.articles)
+      React.DOM.div
+        className: 'row'
         for article in @state.articles
-          React.createElement Article, key: article.id, article: article
+          React.createElement Article, key: article.id, article: article, position: @position(article)
