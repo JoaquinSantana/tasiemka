@@ -17,7 +17,7 @@
       #Displat new articles
         @setState articles: data.articles 
   position: (article) ->
-    position = @props.site.articles.indexOf(article) + 1;
+    position = @state.articles.indexOf(article) + 1;
   render: ->
     React.DOM.div
       className: 'site_wrapper'
