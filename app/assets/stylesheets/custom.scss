@@ -1,7 +1,8 @@
 $pink_maincolor: #dd2476;
 $orange_maincolor: #ff512f;
 $main_fontcolor: white;
-
+$light_gray: #DDDDDD;
+$dark_gray: darken($light_gray, 50%); 
 
 @font-face {
   font-family: 'Philosopher-Regular';
@@ -110,5 +111,42 @@ body {
   }
 }
 
+.articles_wrapper {
+  margin-left: 0px;
+  margin-right: 0px;
 
+  .article_wrapper {
+    width: 98%;
+    height: 40px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background: $light_gray;
+    position: relative;
 
+    .article_num {
+      position: absolute;
+      float: left;
+      width: 30px;
+      height: 30px;
+      margin-top: 5px;
+      text-align: center;
+      line-height: 30px;
+      color: #fff;
+      font-size: 18px;
+      position: absolute;
+      top: 0;
+      display: block;
+      background: $dark_gray;
+    }
+
+    .article_title {
+      position: absolute;
+      float: left;
+      padding-top: 5px;
+      margin-left: 50px;
+      font-size: 16px;
+    }
+  }  
+}

@@ -22,10 +22,7 @@
     React.DOM.div
       className: 'site_wrapper'
       React.createElement SiteForm, options: @allSite(), siteName: @props.site.name, handleChangeSite: @changeSite
-      React.DOM.ul
-        className: 'list-unstyled'
-#      console.log(@state.articles)
       React.DOM.div
-        className: 'row'
+        className: 'row articles_wrapper'
         for article in @state.articles
           React.createElement Article, key: article.id, article: article, position: @position(article)
