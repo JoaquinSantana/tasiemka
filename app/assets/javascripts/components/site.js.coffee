@@ -21,7 +21,6 @@
   render: ->
     React.DOM.div
       className: 'site_wrapper'
-      React.DOM.h2, null, @props.site.name
       React.createElement SiteForm, options: @allSite(), siteName: @props.site.name, handleChangeSite: @changeSite
       React.DOM.ul
         className: 'list-unstyled'

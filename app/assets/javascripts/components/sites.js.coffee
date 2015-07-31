@@ -5,7 +5,6 @@
   getDefaultState: ->
     sites: []
   render: ->
-    console.log(@state.sites)
     React.DOM.div
       className: 'sites_wrapper'
       for site in @state.sites       
