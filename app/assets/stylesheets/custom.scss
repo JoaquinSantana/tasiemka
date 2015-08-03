@@ -4,6 +4,18 @@ $main_fontcolor: white;
 $light_gray: #DDDDDD;
 $dark_gray: darken($light_gray, 50%); 
 
+body {
+  overflow: hidden;
+  /* height:100%; */
+  font-family: 'Philosopher-Regular';
+  background: -webkit-linear-gradient(90deg, #D38312 10%, #A83279 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #D38312 10%, #A83279 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #D38312 10%, #A83279 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #D38312 10%, #A83279 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #D38312 10%, #A83279 90%); /* W3C */
+        
+}
+
 @font-face {
   font-family: 'Philosopher-Regular';
   src:font-url('Philosopher-Regular.eot');
@@ -15,15 +27,6 @@ $dark_gray: darken($light_gray, 50%);
   font-style: normal;
 }
 
-body {
-  font-family: 'Philosopher-Regular';
-  background: -webkit-linear-gradient(90deg, #D38312 10%, #A83279 90%); /* Chrome 10+, Saf5.1+ */
-  background:    -moz-linear-gradient(90deg, #D38312 10%, #A83279 90%); /* FF3.6+ */
-  background:     -ms-linear-gradient(90deg, #D38312 10%, #A83279 90%); /* IE10 */
-  background:      -o-linear-gradient(90deg, #D38312 10%, #A83279 90%); /* Opera 11.10+ */
-  background:         linear-gradient(90deg, #D38312 10%, #A83279 90%); /* W3C */
-        
-}
 
 
 .navbar {
@@ -41,12 +44,14 @@ body {
   }
 }
 
+
 .sites_wrapper {
-  margin-top: 50px;
+  margin-bottom: 0px;
+  margin-top: 15px;
   background: rgba(200, 54, 54, 0.5);
 
   .site_wrapper {
-    border: 3px solid white;
+    /* border: 3px solid white; */
   }
 }
 
@@ -55,6 +60,7 @@ body {
   height: 34px;
   margin-left: 5px;
   margin-top: 5px;
+  margin-bottom: 15px;
   @include transition(0.6s);
   color: $main_fontcolor;
 
@@ -114,17 +120,24 @@ body {
 .articles_wrapper {
   margin-left: 0px;
   margin-right: 0px;
+  height: 740px;
+  padding-bottom: 40px;
+  overflow-y: scroll;
+
+  .article_wrapper:last-child {
+      /* margin-bottom: 25px !important; */
+  }
 
   .article_wrapper {
     width: 98%;
     height: 40px;
     padding: 5px;
-    margin-top: 10px;
+    margin-bottom: 10px;
     margin-left: 5px;
     margin-right: 5px;
     background: $light_gray;
     position: relative;
-
+  
     .article_num {
       position: absolute;
       float: left;
@@ -150,3 +163,4 @@ body {
     }
   }  
 }
+
