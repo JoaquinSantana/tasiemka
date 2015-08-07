@@ -14,7 +14,7 @@ body {
         background:      -o-linear-gradient(90deg, #D38312 10%, #A83279 90%); Opera 11.10+
         background:         linear-gradient(90deg, #D38312 10%, #A83279 90%); W3C
          */      
-  
+
   background: -webkit-linear-gradient(90deg, #7b4397 10%, #dc2430 90%); /* Chrome 10+, Saf5.1+ */
   background:    -moz-linear-gradient(90deg, #7b4397 10%, #dc2430 90%); /* FF3.6+ */
   background:     -ms-linear-gradient(90deg, #7b4397 10%, #dc2430 90%); /* IE10 */
@@ -105,7 +105,6 @@ body {
     text-indent: 1px;
     text-overflow: '';
   }
-
   .select_site {
 
     @include transition(0.6s);
@@ -144,7 +143,8 @@ body {
     margin-right: 5px;
     background: $light_gray;
     position: relative;
-  
+    
+
     .article_num {
       position: absolute;
       float: left;
@@ -169,5 +169,26 @@ body {
       font-size: 16px;
     }
   }  
+}
+
+.flash {
+  animation-iteration-count: 1;
+}
+
+
+@-moz-document url-prefix() {
+    select, select:-moz-focusring, select::-moz-focus-inner {
+       color: transparent !important;
+       text-shadow: 0 0 0 #000 !important;
+       background-image: none !important;
+       border:0;
+    }
+}
+
+
+@media (max-width: $screen-sm-min) { 
+  body {
+    background: red;
+  }
 }
 

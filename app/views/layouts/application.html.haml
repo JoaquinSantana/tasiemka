@@ -1,12 +1,14 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{ content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type'}
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1' } 
     %title Tasiemka
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': true
+    = javascript_include_tag 'application', 'data-turbolinks-track': true
     = csrf_meta_tags
   %body
+    %script{ src: "#{Rails.root}/node_modules/react_ininite/dist/react-infinite.js" }
     = render 'layouts/nav'
     - flash.each do |key, value|
       .alert{ class: "alert-#{key}"}

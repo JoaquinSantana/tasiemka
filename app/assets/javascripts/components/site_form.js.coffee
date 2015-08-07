@@ -6,8 +6,10 @@
   getDefaultState: ->
     options: []
   handleChange: (event) ->
+    console.log 'Render Site Form - handleCHange'
     @props.handleChangeSite(event.target.value)
   render: ->
+    console.log 'Render Site Form'
     React.DOM.div
       className: 'row siteformwrapper'
       React.DOM.div
@@ -20,7 +22,7 @@
             defaultValue: @state.defaultValue
             for op in @state.options
               #console.log(op[0])
-              React.DOM.option         
+              React.DOM.option
                 id: op[0]
                 className: 'dhdwh'
                 op[1]

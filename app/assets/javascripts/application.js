@@ -17,4 +17,6 @@
 //= require react
 //= require react_ujs
 //= require components
+//= reqiore custom
 //= require_tree .
+
