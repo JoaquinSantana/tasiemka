@@ -1,7 +1,10 @@
 class SitesController < ApplicationController
   def index
+    @sites = Site.all.limit(3)
+=begin
     @sites = JSON.parse Site.all.limit(3).to_json(include: :articles)
-    @sitesname = Site.all.pluck(:name)
+=end
+    @sitesname = Site.all
   end
 
   def load_article

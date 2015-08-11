@@ -20,3 +20,4 @@
 //= reqiore custom
 //= require_tree .
 
+var Infinite = require('react-infinite');

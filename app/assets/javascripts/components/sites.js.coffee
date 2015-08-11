@@ -1,6 +1,6 @@
 @Sites = React.createClass
   getInitialState: ->
-    sites: @props.data
+    sites: @props.sites
     all_site: @props.all_site
   getDefaultState: ->
     sites: []
