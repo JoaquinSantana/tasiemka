@@ -11,6 +11,7 @@
   render: ->
     console.log 'Render Site Form'
     React.DOM.div
+      id: @props.key
       className: 'row siteformwrapper'
       React.DOM.div
         className: 'col-md-12' 

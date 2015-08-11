@@ -2,7 +2,7 @@ json.sites @sites do |site|
   json.extract! site, :id, :name
 
   json.articles site.articles.limit(20) do |article|
-    json.extract! article, :id, :title
+    json.extract! article, :id, :title, :site_id
   end
 end
 

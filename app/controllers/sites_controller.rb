@@ -9,14 +9,17 @@ class SitesController < ApplicationController
 
   def load_article
     name = params[:name].to_s
-    only_site = Site.find_by(name: name)
+    @site = Site.find_by(name: name)
     
-    @site = JSON.parse only_site.to_json(include: :articles) 
+=begin
+@site = JSON.parse only_site.to_json(include: :articles) 
 
     if @site
       render json: @site
     else
       render json: @site.errors, status: :unprocessable_entity
     end
+=end
+
   end
 end

@@ -3,16 +3,18 @@
 @Site = React.createClass
   getInitialState: ->
     articles: @props.site.articles
+    all_site: @props.all_site
     isInfiniteLoading: false
     newArticles: []
+    site: @props.site
   getDefaultState: ->
-    articles: @props.site.articles
+    articles: @state.site.articles
   allSite: ->
-    @props.all_site.map (site) =>
+    @state.all_site.map (site) =>
       [site.id, site.name]
   changeSite: (site) ->
     console.log 'change Site'
-    #Load site articles from server
+    console.log(site)
     $.ajax
       method: 'GET'
       url: "sites/" + site
@@ -20,17 +22,16 @@
       data: site
       success: (data) =>
       #Displat new articles
-        @setState articles: data.articles 
+        @setState articles: data.articles, site: data 
         console.log 'success get articles change'
   position: (article) ->
     position = @state.articles.indexOf(article) + 1;
   downloadArticles: ->
-    console.log('download articles')
     lastArticle = @state.articles[@state.articles.length - 1]
     $.ajax
       method: 'GET'
-      url: "get_articles/" + @props.site.id
-      data: { lastElem: lastArticle.id, act_site: @props.site.id }
+      url: "get_articles/" + @state.site.id
+      data: { lastElem: lastArticle.id, act_site: @state.site.id }
       success: (data) =>
         @setState newArticles: data
   handleInfiniteLoad: ->
@@ -51,10 +52,11 @@
       'Loading...'
   render: ->
     React.DOM.div
+      id: @state.site.id
       className: 'test'
       React.DOM.div
         className: 'col-md-4 text-center sites site_wrapper'
-        React.createElement SiteForm, options: @allSite(), siteName: @props.site.name, handleChangeSite: @changeSite
+        <SiteForm key={@state.site.id} options={@allSite()} siteName={@state.site.name} handleChangeSite={@changeSite} />
         React.DOM.div
           className: 'articles'
           <Infinite elementHeight={40}
