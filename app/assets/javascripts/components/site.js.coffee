@@ -51,14 +51,10 @@
       className: 'infinite-list-item'
       'Loading...'
   render: ->
-    React.DOM.div
-      id: @state.site.id
-      className: 'test'
-      React.DOM.div
-        className: 'col-md-4 text-center sites site_wrapper'
+    <div className='test', id={@state.site.id}>
+      <div className='col-md-4 text-center sites site_wrapper'>
         <SiteForm key={@state.site.id} options={@allSite()} siteName={@state.site.name} handleChangeSite={@changeSite} />
-        React.DOM.div
-          className: 'articles'
+        <div className='articles'>
           <Infinite elementHeight={40}
                            containerHeight={756}
                            infiniteLoadBeginBottomOffset={200}
@@ -67,7 +63,12 @@
                            isInfiniteLoading={this.state.isInfiniteLoading}
           >
             {
-              for article in @state.articles
-                <Article key={article.id} position={@position(article)} article={article} />
+              @state.articles.map (article, index) =>
+                <div className="articleeeee" key={index}>
+                  <Article key={index} position={@position(article)} article={article} />
+                </div>
             }
           </Infinite>
+        </div>
+      </div>
+    </div>

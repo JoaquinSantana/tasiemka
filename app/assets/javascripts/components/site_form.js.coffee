@@ -6,24 +6,17 @@
   getDefaultState: ->
     options: []
   handleChange: (event) ->
-    console.log 'Render Site Form - handleCHange'
     @props.handleChangeSite(event.target.value)
   render: ->
-    console.log 'Render Site Form'
-    React.DOM.div
-      id: @props.key
-      className: 'row siteformwrapper'
-      React.DOM.div
-        className: 'col-md-12' 
-        React.DOM.form
-          className: 'form-inline pull-left'  
-          React.DOM.select
-            onChange: @handleChange
-            className: 'select_site'
-            defaultValue: @state.defaultValue
-            for op in @state.options
-              #console.log(op[0])
-              React.DOM.option
-                id: op[0]
-                className: 'dhdwh'
-                op[1]
+    <div className="row siteformwrapper">
+      <div className="col-md-12">
+        <form className='form-inline pull-left'>
+          <select className='select_site' onChange={@handleChange} defaultValue={@state.defaultValue}>
+            {
+              for op in @state.options
+                <option key={op} className='option_select'>{op[1]}</option>
+            }
+          </select>
+        </form>
+      </div>
+    </div>

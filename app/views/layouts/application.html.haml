@@ -8,7 +8,6 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': true
     = csrf_meta_tags
   %body
-    %script{ src: "#{Rails.root}/node_modules/react_ininite/dist/react-infinite.js" }
     = render 'layouts/nav'
     - flash.each do |key, value|
       .alert{ class: "alert-#{key}"}

@@ -28,7 +28,6 @@ body {
   src:font-url('Philosopher-Regular.eot');
   src:font-url('Philosopher-Regular.eot?#iefix') format('embedded-opentype'),
     font-url('Philosopher-Regular.svg#Philosopher-Regular') format('svg'),
-    font-url('Philosopher-Regular.woff') format('woff'),
     font-url('Philosopher-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
@@ -81,7 +80,7 @@ body {
     cursor: pointer;
     height: 34px;
     overflow: hidden;
-    background: url(down_arrow_select) no-repeat right #ddd;
+    background: url(down_arrow_select.jpg) no-repeat right #ddd;
     outline: 0;
   }
 
