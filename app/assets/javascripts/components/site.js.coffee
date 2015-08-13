@@ -41,17 +41,22 @@
     setTimeout (->
       elemLength = that.state.articles.length
       newElements = that.state.newArticles
-      that.setState
-        isInfiniteLoading: false
-        articles: that.state.articles.concat(newElements)
-      return
+      if newElements.length > 0
+        that.setState
+          isInfiniteLoading: false
+          articles: that.state.articles.concat(newElements)
+        return
+      else
+        that.setState
+          isInfiniteLoading: false
+        return
     ), 2505
   elementInfiniteLoad: ->
     React.DOM.div
       className: 'infinite-list-item'
       'Loading...'
   render: ->
-    <div className='test', id={@state.site.id}>
+    <div className='site', id={@state.site.id}>
       <div className='col-md-4 text-center sites site_wrapper'>
         <SiteForm key={@state.site.id} options={@allSite()} siteName={@state.site.name} handleChangeSite={@changeSite} />
         <div className='articles'>
@@ -64,7 +69,7 @@
           >
             {
               @state.articles.map (article, index) =>
-                <div className="articleeeee" key={index}>
+                <div className="article" key={index}>
                   <Article key={index} position={@position(article)} article={article} />
                 </div>
             }
