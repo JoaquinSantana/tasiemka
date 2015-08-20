@@ -56,6 +56,7 @@
       className: 'infinite-list-item'
       'Loading...'
   render: ->
+    console.log(@state.articles)
     <div className='site', id={@state.site.id}>
       <div className='col-md-4 text-center sites site_wrapper'>
         <SiteForm key={@state.site.id} options={@allSite()} siteName={@state.site.name} handleChangeSite={@changeSite} />

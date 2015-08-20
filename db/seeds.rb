@@ -1,7 +1,4 @@
 site1 = Site.create name: 'Pudelek'
-  60.times do |art|
-    Article.create title: "site: #{site1.name} - #{art}", site: site1
-  end
 
 site2 = Site.create name: 'Kozaczek'
   60.times do |art|
