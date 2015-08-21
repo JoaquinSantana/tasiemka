@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150820105353) do
+ActiveRecord::Schema.define(version: 20150821070333) do
 
   create_table "articles", force: :cascade do |t|
     t.text     "title"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20150820105353) do
   end
 
   add_index "articles", ["site_id"], name: "index_articles_on_site_id"
+  add_index "articles", ["title"], name: "index_articles_on_title", unique: true
 
   create_table "sites", force: :cascade do |t|
     t.text     "name"

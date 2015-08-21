@@ -56,7 +56,6 @@
       className: 'infinite-list-item'
       'Loading...'
   render: ->
-    console.log(@state.articles)
     <div className='site', id={@state.site.id}>
       <div className='col-md-4 text-center sites site_wrapper'>
         <SiteForm key={@state.site.id} options={@allSite()} siteName={@state.site.name} handleChangeSite={@changeSite} />
@@ -71,7 +70,7 @@
             {
               @state.articles.map (article, index) =>
                 <div className="article" key={index}>
-                  <Article key={index} position={@position(article)} article={article} />
+                  <Article key={index} position={@position(article)} article={article} site={@props.site} />
                 </div>
             }
           </Infinite>
