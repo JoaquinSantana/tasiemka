@@ -17,6 +17,7 @@ gem 'font-awesome-rails'
 gem 'animate-rails'
 gem 'browserify-rails', '~> 0.9.1'
 gem 'sprockets-coffee-react'
+gem 'hirb'
 
 group :development, :test do
   gem 'byebug'

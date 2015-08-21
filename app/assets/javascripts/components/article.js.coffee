@@ -2,12 +2,11 @@
 
 @Article = React.createClass
   render: ->
-    console.log(@props.site)
     if @props.article.title.length > 50
       title = @props.article.title.substring(0,49) + "..."
     else
       title = @props.article.title
-    if @props.site.name == 'kozaczek'  
+    if @props.site.name == 'Kozaczek'  
       article_link = 'http://kozaczek.pl/' + @props.article.article_url 
     else
       article_link = @props.article.article_url

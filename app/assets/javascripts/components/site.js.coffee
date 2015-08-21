@@ -7,14 +7,10 @@
     isInfiniteLoading: false
     newArticles: []
     site: @props.site
-  getDefaultState: ->
-    articles: @state.site.articles
   allSite: ->
     @state.all_site.map (site) =>
       [site.id, site.name]
   changeSite: (site) ->
-    console.log 'change Site'
-    console.log(site)
     $.ajax
       method: 'GET'
       url: "sites/" + site

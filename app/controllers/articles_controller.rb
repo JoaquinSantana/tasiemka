@@ -5,12 +5,13 @@ class ArticlesController < ApplicationController
     last_article = Article.find(params[:lastElem])
     next_article = site.next_article(last_article)
 
-    @new_data = JSON.parse site.articles.where(id: (next_article..(next_article + 10))).to_json unless next_article.blank?
+    @new_data = JSON.parse site.articles.where(id: next_article[1]..next_article[0]).to_json unless next_article.blank?
+
     
     if @new_data
       render json: @new_data
     else
-      render json: {}
+      render json: { element: 'last' }
     end
   end
 end
