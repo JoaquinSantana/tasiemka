@@ -31,4 +31,16 @@ task :download_articles => :environment do
     end
   end
 
+  #GWIAZDY WP
+  gwiazdy = Site.find_by(name: 'GwiazdyWP')
+  name_site = 'http://gwiazdy.wp.pl'
+  doc = Nokogiri::HTML(open(name_site))
+  art = doc.css('.teaser').each do |art|
+  #data_dodania_artykulu = art.css('.nsg_date').text
+    link_do_artykulu = art.css('a')[0][:href]
+    tytul = art.css('a h2').text
+    unless gwiazdy.articles.find_by(title: tytul)
+      Article.create(title: tytul, article_url: link_do_artykulu, site: gwiazdy)
+    end
+  end  
 end

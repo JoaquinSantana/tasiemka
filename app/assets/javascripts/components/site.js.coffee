@@ -66,7 +66,7 @@
             {
               @state.articles.map (article, index) =>
                 <div className="article" key={index}>
-                  <Article key={index} position={@position(article)} article={article} site={@props.site} />
+                  <Article key={index} position={@position(article)} article={article} site={@state.site} />
                 </div>
             }
           </Infinite>

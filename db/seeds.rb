@@ -1,6 +1,6 @@
-site1 = Site.create name: 'Pudelek'
-
-site2 = Site.create name: 'Kozaczek'
+Site.create name: 'Pudelek'
+Site.create name: 'Kozaczek'
+Site.create name: 'GwiazdyWP'
 
 site3 = Site.create name: 'Cosik'
   60.times do |art|
