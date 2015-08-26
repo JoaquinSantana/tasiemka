@@ -18,6 +18,7 @@ gem 'animate-rails'
 gem 'browserify-rails', '~> 0.9.1'
 gem 'sprockets-coffee-react'
 gem 'hirb'
+gem 'iconv'
 
 group :development, :test do
   gem 'byebug'
