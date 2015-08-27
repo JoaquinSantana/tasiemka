@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150827082120) do
+ActiveRecord::Schema.define(version: 20150827090311) do
 
   create_table "articles", force: :cascade do |t|
     t.text     "title"
@@ -30,6 +30,9 @@ ActiveRecord::Schema.define(version: 20150827082120) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text     "favurl"
+    t.string   "site_color"
   end
+
+  add_index "sites", ["name"], name: "index_sites_on_name"
 
 end

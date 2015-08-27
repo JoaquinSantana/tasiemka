@@ -2,7 +2,8 @@
 
 @Article = React.createClass
   render: ->
-    console.log(@props.site.name)
+    console.log(@props.site)
+    site_color = @props.site.site_color
     if @props.article.title.length > 50
       title = @props.article.title.substring(0,49) + "..."
     else
@@ -16,7 +17,7 @@
       article_link = @props.article.article_url
     <a target="_blank" href="#{article_link}" className="link">  
       <div className='col-md-12 article_wrapper infinite-list-item'> 
-        <div className='pull-left article_num'>
+        <div className='pull-left article_num' style={{background: site_color}}>
           { @props.position }
         </div>
         <div className='pull-left article_title'>
