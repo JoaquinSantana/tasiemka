@@ -14,7 +14,7 @@ task :download_articles => :environment do
     tytul =  article.css('.entry__header h3 a').text.strip.gsub(?", "'")
     unless pudelek.articles.find_by(title: tytul)
       Article.create(title: tytul, article_url: link_do_artykulu, dodano: data_dodania_artykulu, site: pudelek)
-      p pudelek + '   Created ' + tytul
+      p name_site + '   Created ' + tytul
     end
   end
 
@@ -28,7 +28,7 @@ task :download_articles => :environment do
     tytul = art.css('.nsg_title a')[0][:title]
     unless kozaczek.articles.find_by(title: tytul)
       Article.create(title: tytul, article_url: link_do_artykulu, dodano: data_dodania_artykulu, site: kozaczek)
-      p kozaczek + '   Created ' + tytul
+      p name_site + '   Created ' + tytul
     end
   end
 
@@ -42,7 +42,7 @@ task :download_articles => :environment do
     tytul = art.css('a h2').text
     unless gwiazdy.articles.find_by(title: tytul)
       Article.create(title: tytul, article_url: link_do_artykulu, site: gwiazdy)
-      p gwiazdy + '   Created ' + tytul
+      p name_site + '   Created ' + tytul
     end
   end
 
@@ -55,7 +55,7 @@ task :download_articles => :environment do
     tytul = art.css('a .title').text.strip.gsub(?", "'")
     unless onet.articles.find_by(title: tytul)
       Article.create(title: tytul, article_url: link_do_artykulu, site: onet)
-      p onet + '   Created ' + tytul 
+      p name_site + '   Created ' + tytul 
     end
   end
 
@@ -71,7 +71,7 @@ task :download_articles => :environment do
     tytul = art.css('h1 a').text.strip.gsub(?", "'")
     unless tvn24.articles.find_by(title: tytul) || tytul.blank?
       Article.create(title: tytul, article_url: link_do_artykulu, site: tvn24)
-      p tvn24 + '   Created ' + tytul 
+      p name_site + '   Created ' + tytul 
     end
   end
 
@@ -85,14 +85,14 @@ task :download_articles => :environment do
   tytul = main_art.css('a').text.strip.gsub(?", "'")
   unless interia.articles.find_by(title: tytul) || tytul.blank?
     Article.create(title: tytul, article_url: link_do_artykulu, site: interia)
-    p interia + '   Created ' + tytul 
+    p name_site + '   Created ' + tytul 
   end
   doc.css('#facts_news_small li').each do |art|
     tytul = art.css('a').text.strip.gsub(?", "'")
     link_do_artykulu = art.css('a')[0][:href]
     unless interia.articles.find_by(title: tytul) || tytul.blank?
       Article.create(title: tytul, article_url: link_do_artykulu, site: interia)
-      p interia + '   Created ' + tytul 
+      p name_site + '   Created ' + tytul 
     end
   end
 end

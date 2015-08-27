@@ -10,6 +10,7 @@
   render: ->
     <div className="row siteformwrapper">
       <div className="col-md-12">
+        <LogoFavicon link={@props.site.favurl} />
         <form className='form-inline pull-left'>
           <select className='select_site' onChange={@handleChange} defaultValue={@state.defaultValue}>
             {

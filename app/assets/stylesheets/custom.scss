@@ -59,11 +59,24 @@ body {
   .site_wrapper {
     /* border: 3px solid white; */
   }
+
+  .col-md-12 {
+    position: relative;
+    .logo_site {
+      position: absolute;
+      float: left;
+      width: 30px;
+      left: 0;
+      top: 5;
+      margin-top: 5px;
+      margin-left: 5px;
+    }
+  }
 }
 
 .siteformwrapper {
   width: 240px;
-  height: 34px;
+  height: 40px;
   margin-left: 5px;
   margin-top: 5px;
   margin-bottom: 15px;
@@ -78,7 +91,7 @@ body {
     @include transition(0.6s);
     width: 240px;
     cursor: pointer;
-    height: 34px;
+    height: 40px;
     overflow: hidden;
     background: url(down_arrow_select.jpg) no-repeat right #ddd;
     outline: 0;
@@ -98,15 +111,15 @@ body {
     line-height: 1;
     border: 0;
     border-radius: 0;
-    height: 34px;
+    height: 40px;
     -webkit-appearance: none;
     -moz-appearance: none;
     text-indent: 1px;
     text-overflow: '';
   }
   .select_site {
-
     @include transition(0.6s);
+    padding-left: 44px;
     font-size: 20px;
     text-transform: uppercase;
     option {
@@ -122,6 +135,16 @@ body {
   }
 }
 
+.form-inline {
+  position: relative;
+
+  img {
+    position: absolute;
+    width: 30px;
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+}
 .infinite-list-item {
   height: 40px;
   width: 98%;

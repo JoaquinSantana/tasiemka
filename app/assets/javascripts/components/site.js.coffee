@@ -54,7 +54,7 @@
   render: ->
     <div className='site', id={@state.site.id}>
       <div className='col-md-4 text-center sites site_wrapper'>
-        <SiteForm key={@state.site.id} options={@allSite()} siteName={@state.site.name} handleChangeSite={@changeSite} />
+        <SiteForm key={@state.site.id} options={@allSite()} siteName={@state.site.name} handleChangeSite={@changeSite} site={@state.site}/>
         <div className='articles'>
           <Infinite elementHeight={40}
                            containerHeight={756}
