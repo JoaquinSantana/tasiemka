@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/doabit/semantic-ui-sass.git
+  revision: 867150f9380e9793b5c9e054746442ff6bf1b934
+  specs:
+    semantic-ui-sass (2.0.7.0)
+      sass (>= 3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -232,6 +239,7 @@ DEPENDENCIES
   react-rails (~> 1.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  semantic-ui-sass!
   spring
   sprockets-coffee-react
   sqlite3

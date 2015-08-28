@@ -1,4 +1,6 @@
 $(document).on "page:change", ->
+  $('.navbar-header').hide().transition('jiggle')
+
   $('.navbar-header').click ->
     $(this).addClass('animated flash')
 

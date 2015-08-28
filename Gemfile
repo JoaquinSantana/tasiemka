@@ -19,6 +19,7 @@ gem 'browserify-rails', '~> 0.9.1'
 gem 'sprockets-coffee-react'
 gem 'hirb'
 gem 'iconv'
+gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 
 group :development, :test do
   gem 'byebug'

@@ -11,15 +11,19 @@
     @state.all_site.map (site) =>
       [site.id, site.name]
   changeSite: (site) ->
+    console.log('po animacji')
     $.ajax
       method: 'GET'
       url: "sites/" + site
       dataType: 'JSON'
       data: site
       success: (data) =>
-      #Displat new articles
-        @setState articles: data.articles, site: data 
-        console.log 'success get articles change'
+        #Displat new articles
+        @setState articles: data.articles, site: data
+    b = React.findDOMNode(@refs.articlesref)
+    console.log(b)
+    $(b).transition('pulse') 
+    #$('.articles').transition('shake') 
   position: (article) ->
     position = @state.articles.indexOf(article) + 1;
   downloadArticles: ->
@@ -50,12 +54,12 @@
   elementInfiniteLoad: ->
     React.DOM.div
       className: 'infinite-list-item'
-      'Loading...'
+      'Pobieranie...'
   render: ->
     <div className='site', id={@state.site.id}>
       <div className='col-sm-6 col-md-4 text-center sites site_wrapper'>
         <SiteForm key={@state.site.id} options={@allSite()} siteName={@state.site.name} handleChangeSite={@changeSite} site={@state.site}/>
-        <div className='articles'>
+        <div className='articles' ref='articlesref'>
           <Infinite elementHeight={40}
                            containerHeight={756}
                            infiniteLoadBeginBottomOffset={200}
