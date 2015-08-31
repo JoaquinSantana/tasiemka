@@ -284,9 +284,23 @@ body {
 }
 
 
+/* MOBILE */
 @media (max-width: $screen-sm-min) { 
-  body {
-    background: red;
+  .navbar {
+    padding: 0px;
+  }
+
+  .article_title {
+    font-size: 13px !important;
+  }
+
+  .sites_wrapper {
+    margin-top: 0px;
+  }
+
+  .siteformwrapper {
+    margin-top: 0px;
+    padding-top: 5px;
   }
 }
 
