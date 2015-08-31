@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   
   get '/sites/:name', to: 'sites#load_article'
   get '/get_articles/:id', to: 'articles#get_articles'
-  get '/about', to: 'info#about'
-  get '/blog', to: 'info#blog'
-
+  get '/about', to: 'staticsites#about'
+  
   root 'sites#index'
 end

@@ -107,7 +107,7 @@ body {
     background: transparent;
     width: 240px;
     padding: 5px;
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1;
     border: 0;
     border-radius: 0;
@@ -205,6 +205,70 @@ body {
 
 */
 
+
+.about_wrapper {
+  width: 100%;
+  height: 100%;
+  background: url(startup-photos.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  .info_panel {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    /*
+    This doesn't work
+    margin-left: -25%;
+    margin-top: -25%;
+    */
+    
+    width: 40%;
+    height: 50%;
+
+    padding: 20px;  
+    background: rgba(255, 255, 255, 0.35);
+    color: black;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+
+    h2 {
+      margin-bottom: 40px;
+      margin-top: 40px;
+    }
+
+    .info_content {
+      font-size: 15px;
+    }
+  }
+  .info_panek {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    /*
+    This doesn't work
+    margin-left: -25%;
+    margin-top: -25%;
+    */
+    
+    width: 40%;
+    height: 50%;
+
+    padding: 20px;  
+    background: rgba(255, 255, 255, 0.35);
+    color: white;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    filter: blur(5px);
+  }
+}
+
 .flash {
   animation-iteration-count: 1;
 }
@@ -226,3 +290,6 @@ body {
   }
 }
 
+.about_info {
+  margin-left: 15px;
+}

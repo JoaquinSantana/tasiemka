@@ -50,7 +50,7 @@
         that.setState
           isInfiniteLoading: false
         return
-    ), 2505
+    ), 1505
   elementInfiniteLoad: ->
     React.DOM.div
       className: 'infinite-list-item'

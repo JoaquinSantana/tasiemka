@@ -5,9 +5,6 @@
         = image_tag("tasiemka2.png", size: "160x80", alt: "Tasiemka", id: "logo")
   .collapse.navbar-collapse.navbar-ex1-collapse#toggled
     %ul.nav.navbar-nav.navbar-right
-      %li
+      %li.about_info
         = link_to about_path do
           %i.fa.fa-info
-      %li
-        = link_to blog_path do
-          %i.fa.fa-newspaper-o
