@@ -11,7 +11,6 @@
     @state.all_site.map (site) =>
       [site.id, site.name]
   changeSite: (site) ->
-    console.log('po animacji')
     $.ajax
       method: 'GET'
       url: "sites/" + site
@@ -21,7 +20,6 @@
         #Displat new articles
         @setState articles: data.articles, site: data
     b = React.findDOMNode(@refs.articlesref)
-    console.log(b)
     $(b).transition('pulse') 
     #$('.articles').transition('shake') 
   position: (article) ->
@@ -69,7 +67,7 @@
           >
             {
               @state.articles.map (article, index) =>
-                <div className="article" key={index}>
+                <div className="article" key={index} id="one_article">
                   <Article key={index} position={@position(article)} article={article} site={@state.site} />
                 </div>
             }

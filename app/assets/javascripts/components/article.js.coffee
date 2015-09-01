@@ -16,7 +16,6 @@
     if @props.site.name == 'Kozaczek'  
       article_link = 'http://kozaczek.pl/' + @props.article.article_url
     else if @props.site.name == 'GwiazdyWP' && @props.article.article_url.substring(0,1) == '/'
-      console.log(@props.article.article_url)
       article_link = 'http://gwiazdy.wp.pl' + @props.article.article_url
     else
       article_link = @props.article.article_url
@@ -25,8 +24,8 @@
         <div className='pull-left article_num' style={{background: site_color}}>
           { @props.position }
         </div>
-        <div className='pull-left article_title'>
-          { title }
+        <div className='pull-left article_title' id='title_text'>
+          { @props.article.title }
         </div>
       </div>
     </a>
