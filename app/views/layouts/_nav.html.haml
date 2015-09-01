@@ -1,10 +1,22 @@
-%nav.navbar
-  .navbar-header
-    = link_to root_path do
-      %span.navbar-brand
-        = image_tag("tasiemka2.png", size: "160x80", alt: "Tasiemka", id: "logo")
-  .collapse.navbar-collapse.navbar-ex1-collapse#toggled
-    %ul.nav.navbar-nav.navbar-right
-      %li.about_info
-        = link_to about_path do
-          %i.fa.fa-info
+%nav.navbar.navbar-default
+  .container-fluid
+    %div.navbar-header
+      %button.navbar-toggle.collapsed{ "type": "button", "data-toggle": "collapse", "data-target": "#navbar-collaps", "aria-expanded": "false" }
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to root_path do
+        %span.navbar-brand
+          = image_tag("tasiemka2.png", size: "160x80", alt: "Tasiemka", id: "logo")
+    .collapse.navbar-collapse#navbar-collaps
+      %ul.nav.navbar-nav.navbar-right
+        %li.active.visible-xs-block.mobile_link
+          %a{ "href": about_path } 
+            O nas
+        %li.active.visible-xs-block.mobile_link
+          %a{ "href": root_path } 
+            Strona główna
+        %li.about_info.hidden-xs
+          = link_to about_path do
+            %i.fa.fa-info

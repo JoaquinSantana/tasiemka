@@ -6,7 +6,6 @@
 //
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // compiled file.
-// require bootstrap-sprockets
 //
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
@@ -16,6 +15,7 @@
 //= require turbolinks
 //= require react
 //= require react_ujs
+//= require bootstrap-sprockets
 //= require components
 //= require semantic-ui/transition
 //= reqiore custom
