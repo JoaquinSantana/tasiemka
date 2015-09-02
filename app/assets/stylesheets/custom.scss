@@ -1,9 +1,3 @@
-$pink_maincolor: #dd2476;
-$orange_maincolor: #ff512f;
-$main_fontcolor: white;
-$light_gray: #DDDDDD;
-$dark_gray: darken($light_gray, 50%); 
-
 body {
   overflow: hidden;
   /* height:100%; */
@@ -262,138 +256,61 @@ body {
 
 
 @-moz-document url-prefix() {
-    select, select:-moz-focusring, select::-moz-focus-inner {
-       color: transparent !important;
-       text-shadow: 0 0 0 #000 !important;
-       background-image: none !important;
-       border:0;
-    }
+  select, select:-moz-focusring, select::-moz-focus-inner {
+    color: transparent !important;
+    text-shadow: 0 0 0 #000 !important;
+    background-image: none !important;
+    border:0;
+  }
 }
 
-
-
 .about_info {
-  margin-left: 15px;
+  font-size: 17px;
+}
+
+.facebook {
+  padding-left: 40px !important;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+.divider {
+  border: $pink_maincolor solid 1px;
+}
+
+.navbar-toggle {
+  &:active,&:focus,&:hover {
+    background-color: $pink_maincolor !important;
+    
+    .icon-bar {
+      background-color: white !important;
+    }
+  }
+}
+
+.navbar-toggle.collapsed {
+  background-color: white !important;
+    
+  .icon-bar {
+    background-color: gray !important;
+  }
+}
+
+.awesome-share-buttons {
+  margin-left: 0px;
+  padding-top: 15px;
+  font-size: 18px;
 }
 
 .mobile_link {
   padding-left: 20px;
   font-size: 20px;
 }
-/* MOBILE */
-@media (max-width: $screen-sm-min) { 
 
-  .navbar {
-    padding: 0px;
-    z-index: 10;
-  }
+.social-share-button-facebook {
 
-  .article_title {
-    font-size: 16px !important;
-  }
-
-  .sites_wrapper {
-    margin-top: 0px;
-    background: none;
-  }
-
-  .siteformwrapper {
-
-    border: 2px solid $light_gray;
-    width: 98%;
-    padding-bottom: 40px;
-    margin-left: 5px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    @include transition(0.6s);
-    color: $main_fontcolor;
-
-    .form-inline {
-      width: 98%;
-    }
-    .col-md-12 {
-      padding: 0;
-    }
-
-    &:hover {
-      @include transition(0.6s);
-      width: 98%;
-      cursor: pointer;
-      height: 40px;
-      overflow: hidden;
-      background: url(down_arrow_select.jpg) no-repeat right #ddd;
-      outline: 0;
-    }
-
-    select:-moz-focusring {
-      color: transparent;
-      text-shadow: 0 0 0 #000;
-    }
-
-    select {
-      outline: 0;
-      background: transparent;
-      width: 98%;
-      padding: 5px;
-      font-size: 17px;
-      line-height: 1;
-      border: 0;
-      border-radius: 0;
-      height: 40px;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      text-indent: 1px;
-      text-overflow: '';
-    }
-    .select_site {
-      width: 98%;
-      @include transition(0.6s);
-      padding-left: 44px;
-      font-size: 20px;
-      text-transform: uppercase;
-      option {
-        width: 98%;
-        color: black;
-        font-size: 16px;
-      }
-
-      &:hover {
-        @include transition(0.6s);
-        color: $pink_maincolor;
-      }
-    }
-  }
-  .navbar-right {
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-
-  .info_panel {
-    top: 55% !important;
-    width: 85% !important;
-    height: 85% !important;
-    z-index: 0;
-  }
-
-  .info_panek {
-    top: 55% !important;
-    width: 85% !important;
-    height: 85% !important;
-    z-index: 0;
-  }
-
-  .info_content {
-    font-size: 18px !important;
-  }
-
-  .siteformwrapper {
-    width: 98%;
-  }
-
-  select {
-    width: 98%;
-  }
 }
-/* END MOBILE */
+
+
+
 

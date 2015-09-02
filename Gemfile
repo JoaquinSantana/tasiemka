@@ -21,6 +21,7 @@ gem 'hirb'
 gem 'iconv'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'whenever', :require => false
+gem 'awesome-share-buttons', github: 'evansobkowicz/awesome-share-buttons'
 
 group :development, :test do
   gem 'byebug'

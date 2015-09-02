@@ -18,6 +18,7 @@
 //= require bootstrap-sprockets
 //= require components
 //= require semantic-ui/transition
+//= require awesome-share-buttons
 //= reqiore custom
 //= require_tree .
 
