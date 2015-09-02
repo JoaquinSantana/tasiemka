@@ -20,6 +20,17 @@ class SitesController < ApplicationController
       render json: @site.errors, status: :unprocessable_entity
     end
 =end
-
   end
+
+  def view_count
+    site = Site.find(params[:id])
+  
+    if site && site.visits_count += 1
+      site.save
+      render json: { nothing: true, status: 200, content_type: 'text/html' }
+    else
+      render json: site.errors, status: :unprocessable_entity
+    end
+  end
+
 end

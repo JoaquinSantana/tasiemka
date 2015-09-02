@@ -7,6 +7,20 @@
   handleLeave: (e) ->
     b = this.refs.articleref.getDOMNode()
     $(b).find('.article_num').css("background", @props.site.site_color)
+  handleViewCount: ->
+    console.log("Click link")
+    $.ajax
+      type: "PATCH",
+      url: "/view_count",
+      data: { id: @props.site.id }
+      success:(data) ->
+        alert data
+        alert("success")
+        return false
+      error:(data) ->
+        alert("error")
+        alert data
+        return false
   render: ->
     site_color = @props.site.site_color
     if @props.article.title.length > 50
@@ -19,7 +33,7 @@
       article_link = 'http://gwiazdy.wp.pl' + @props.article.article_url
     else
       article_link = @props.article.article_url
-    <a target="_blank" ref="articleref" href="#{article_link}" className="link" onMouseEnter={@handleEnter} onMouseLeave={@handleLeave}>  
+    <a target="_blank" ref="articleref" href="#{article_link}" className="link" onClick={@handleViewCount} onMouseEnter={@handleEnter} onMouseLeave={@handleLeave}>  
       <div className='col-md-12 article_wrapper infinite-list-item'> 
         <div className='pull-left article_num' style={{background: site_color}}>
           { @props.position }
