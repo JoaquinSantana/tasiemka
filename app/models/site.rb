@@ -15,4 +15,8 @@ class Site < ActiveRecord::Base
     return next_element, end_range
   end
 
+  def visit_comming
+    self.visits_count += 1
+  end
+
 end

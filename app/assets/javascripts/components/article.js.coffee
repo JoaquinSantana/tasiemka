@@ -12,7 +12,7 @@
     $.ajax
       type: "PATCH",
       url: "/view_count",
-      data: { id: @props.site.id }
+      data: { id: @props.site.id, article_id: @props.article.id }
       success:(data) ->
         alert data
         alert("success")
