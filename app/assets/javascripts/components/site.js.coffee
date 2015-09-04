@@ -53,9 +53,12 @@
     React.DOM.div
       className: 'infinite-list-item'
       'Pobieranie...'
+  showSidebar: ->
+    $('.ui.sidebar').sidebar('toggle')
   render: ->
     <div className='site', id={@state.site.id}>
-      <div className='col-sm-6 col-md-4 text-center sites site_wrapper'>
+      <div className='col-sm-4 col-md-4 text-center sites site_wrapper'>
+        <div className="kneflik" onClick={@showSidebar} />
         <SiteForm key={@state.site.id} options={@allSite()} siteName={@state.site.name} handleChangeSite={@changeSite} site={@state.site}/>
         <div className='articles' ref='articlesref'>
           <Infinite elementHeight={40}

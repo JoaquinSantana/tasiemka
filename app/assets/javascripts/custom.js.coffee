@@ -1,12 +1,18 @@
 $(document).on "page:change", ->
-  $('.navbar-header').hide().transition('jiggle')
+  $('#logo').hide().transition('jiggle')
 
-  $('.navbar-header').click ->
+  $('#logo').click ->
     $(this).addClass('animated flash')
 
   $('option').click ->
-    console.log 'animacja'
     $(this).closest(".site_wrapper").find('.articles_wrapper').one('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd', ->
       $(this).removeClass 'animated flash'
       return
     ).addClass 'animated flash'
+
+  $('#knefel').click (e) ->
+    e.stopPropagation()
+    $('.ui.sidebar').sidebar('toggle')
+
+  $('.ui.dropdown').dropdown();
+  

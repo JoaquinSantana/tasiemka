@@ -13,13 +13,22 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap-sprockets
 //= require react
 //= require react_ujs
-//= require bootstrap-sprockets
+//= require semantic-ui
 //= require components
-//= require semantic-ui/transition
 //= require awesome-share-buttons
 //= reqiore custom
 //= require_tree .
 
 var Infinite = require('react-infinite');
+
+var ready;
+ready = function() {
+
+
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

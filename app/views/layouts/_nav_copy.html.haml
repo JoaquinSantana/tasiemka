@@ -1,0 +1,28 @@
+%nav.navbar.navbar-default
+  .container-fluid
+    %div.navbar-header
+      %button.navbar-toggle.collapsed{ "type": "button", "data-toggle": "collapse", "data-target": "#navbar-collaps", "aria-expanded": "false" }
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to root_path do
+        %span.navbar-brand
+          = image_tag("tasiemka2.png", size: "160x80", alt: "Tasiemka", id: "logo")
+    .collapse.navbar-collapse#navbar-collaps
+      %ul.nav.navbar-nav.navbar-right
+        %li.active.visible-xs-block.mobile_link
+          %a{ "href": about_path } 
+            O nas
+        %li.active.visible-xs-block.mobile_link
+          %a{ "href": root_path } 
+            Strona główna
+        %li.about_info.hidden-xs
+          = link_to about_path do
+            %i.fa.fa-info
+        %li.about_info.hidden-xs
+          = awesome_share_buttons("My Site", :url => 'https://www.facebook.com/profile.php?id=100004342007814', :popup => "true")
+        %li.divider.visible-xs-block{ "role": "separator" }
+        %li.about_info.visible-xs-block.mobile_link.facebook.text-center
+          Polub nas na Facebooku 
+          = awesome_share_buttons("My Site", :url => 'https://www.facebook.com/profile.php?id=100004342007814', :popup => "true")

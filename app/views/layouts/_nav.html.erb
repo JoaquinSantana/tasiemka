@@ -1,0 +1,18 @@
+<div class="ui large menu">
+    <%= link_to root_path do %>
+      <%= image_tag("tasiemka2.png", size: "160x80", id: "logo") %>
+    <% end %>
+  <div class="right menu">
+    <div class="item">
+      <%= link_to about_path do %>
+        <i class="info circle icon"></i>
+      <% end %>
+    </div>
+    <div class="item">
+      <%= awesome_share_buttons("My Site", :url => 'https://www.facebook.com/profile.php?id=100004342007814', :popup => "true") %>
+    </div>
+    <div class="item" id='knefel'>
+      <i class="sidebar icon"></i>
+    </div>
+  </div>
+</div>
