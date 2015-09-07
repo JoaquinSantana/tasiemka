@@ -16,18 +16,22 @@ body {
   overflow: hidden;
   /* height:100%; */
   font-family: 'Philosopher-Regular';
-  /* background: -webkit-linear-gradient(90deg, #D38312 10%, #A83279 90%); Chrome 10+, Saf5.1+
-        background:    -moz-linear-gradient(90deg, #D38311 10%, #A83279 90%); FF3.6+
-        background:     -ms-linear-gradient(90deg, #D38312 10%, #A83279 90%); IE10
-        background:      -o-linear-gradient(90deg, #D38312 10%, #A83279 90%); Opera 11.10+
-        background:         linear-gradient(90deg, #D38312 10%, #A83279 90%); W3C
-         */      
+ /*  background: -webkit-linear-gradient(90deg, #D38312 10%, #A83279 90%); Chrome 10+, Saf5.1+
+                background:    -moz-linear-gradient(90deg, #D38311 10%, #A83279 90%); FF3.6+
+                background:     -ms-linear-gradient(90deg, #D38312 10%, #A83279 90%); IE10
+                background:      -o-linear-gradient(90deg, #D38312 10%, #A83279 90%); Opera 11.10+
+                background:         linear-gradient(90deg, #D38312 10%, #A83279 90%); W3C
+          
+            background: -webkit-linear-gradient(90deg, #7b4397 10%, #dc2430 90%); Chrome 10+, Saf5.1+
+            background:    -moz-linear-gradient(90deg, #7b4397 10%, #dc2430 90%); FF3.6+
+            background:     -ms-linear-gradient(90deg, #7b4397 10%, #dc2430 90%); IE10
+            background:      -o-linear-gradient(90deg, #7b4397 10%, #dc2430 90%); Opera 11.10+
+            background:         linear-gradient(90deg, #7b4397 10%, #dc2430 90%); W3C
+          */         
+}
 
-  background: -webkit-linear-gradient(90deg, #7b4397 10%, #dc2430 90%); /* Chrome 10+, Saf5.1+ */
-  background:    -moz-linear-gradient(90deg, #7b4397 10%, #dc2430 90%); /* FF3.6+ */
-  background:     -ms-linear-gradient(90deg, #7b4397 10%, #dc2430 90%); /* IE10 */
-  background:      -o-linear-gradient(90deg, #7b4397 10%, #dc2430 90%); /* Opera 11.10+ */
-  background:         linear-gradient(90deg, #7b4397 10%, #dc2430 90%); /* W3C */
+.ui.sidebar {
+  z-index: 0
 }
 
 .logo {
@@ -64,7 +68,7 @@ body {
   margin-bottom: 0px;
   margin-top: 15px;
   background: rgba(200, 54, 54, 0.5);
-
+  z-index: 2;
   .site_wrapper {
     /* border: 3px solid white; */
   }
