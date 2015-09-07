@@ -272,7 +272,13 @@ body {
     border:0;
   }
 }
-
+.info.icon {
+  bottom: 0;
+  left: 10px;
+  margin-right: 0;
+  padding-left: 0;
+  top: 0;
+}
 .about_info {
   font-size: 17px;
 }
@@ -347,4 +353,9 @@ i.sidebar {
     font-weight: 500;
     color: $pink_maincolor;
   }
+}
+
+
+.about_site {
+  margin-bottom: 0px !important;
 }
