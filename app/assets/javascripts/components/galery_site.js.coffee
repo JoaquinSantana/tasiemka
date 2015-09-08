@@ -56,13 +56,14 @@
   showSidebar: ->
     $('.ui.sidebar').sidebar('toggle')
   render: ->
+    test = @state.articles.map (article, index) ->
+      console.log(article)
     <div className='site', id={@state.site.id}>
-      <div className='col-sm-8 col-md-8 text-center sites site_wrapper'>
-        <div className="kneflik" onClick={@showSidebar} />
+      <div className='col-sm-8 col-md-8 text-center sites site_wrapper galery_site'>
         <SiteForm key={@state.site.id} options={@allSite()} siteName={@state.site.name} handleChangeSite={@changeSite} site={@state.site}/>
         <div className='articles' ref='articlesref'>
-          <Infinite elementHeight={40}
-                           containerHeight={756}
+          <Infinite elementHeight={50}
+                           containerHeight={750}
                            infiniteLoadBeginBottomOffset={200}
                            onInfiniteLoad={this.handleInfiniteLoad}
                            loadingSpinnerDelegate={this.elementInfiniteLoad()}
@@ -70,11 +71,18 @@
           >
             {
               @state.articles.map (article, index) =>
-                <div className="article" key={index} id="one_article">
-                  <Article key={index} position={@position(article)} article={article} site={@state.site} />
+                <div className="col-md-3 galery_article" key={index}>
+                  <GaleryArticle key={index} position={@position(article)} article={article} site={@state.site} />
                 </div>
             }
           </Infinite>
         </div>
       </div>
     </div>
+###
+
+                  {
+                state.articles.each_slice 3, (slice) ->
+                  slice.map (article, index) ->
+                    console.log article, index
+              }###
