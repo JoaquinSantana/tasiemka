@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150902121223) do
+ActiveRecord::Schema.define(version: 20150908091854) do
 
   create_table "articles", force: :cascade do |t|
     t.text     "title"
@@ -21,10 +21,15 @@ ActiveRecord::Schema.define(version: 20150902121223) do
     t.text     "article_url"
     t.datetime "dodano"
     t.integer  "visits_count", default: 0
+    t.text     "image"
+    t.string   "kolekcja"
+    t.string   "lajk"
+    t.boolean  "have_image"
   end
 
+  add_index "articles", ["article_url"], name: "index_articles_on_article_url"
   add_index "articles", ["site_id"], name: "index_articles_on_site_id"
-  add_index "articles", ["title"], name: "index_articles_on_title", unique: true
+  add_index "articles", ["title"], name: "index_articles_on_title"
 
   create_table "sites", force: :cascade do |t|
     t.text     "name"
@@ -33,6 +38,7 @@ ActiveRecord::Schema.define(version: 20150902121223) do
     t.text     "favurl"
     t.string   "site_color"
     t.integer  "visits_count", default: 0
+    t.boolean  "have_image"
   end
 
   add_index "sites", ["name"], name: "index_sites_on_name"

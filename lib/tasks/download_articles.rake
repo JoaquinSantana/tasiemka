@@ -4,6 +4,7 @@ task :download_articles => :environment do
   require 'open-uri'
   require 'nokogiri'
   require 'iconv'
+  
   #PUDELEK
   pudelek = Site.find_by(name: 'Pudelek')
   name_site = "http://" + pudelek.name.downcase + ".pl"
@@ -89,12 +90,32 @@ task :download_articles => :environment do
     Article.create(title: tytul, article_url: link_do_artykulu, site: interia)
     p name_site + '   Created ' + tytul  + Time.now.to_s
   end
+
   doc.css('#facts_news_small li').each do |art|
     tytul = art.css('a').text.strip.gsub(?", "'")
     link_do_artykulu = art.css('a')[0][:href]
     unless interia.articles.find_by(title: tytul) || tytul.blank?
       Article.create(title: tytul, article_url: link_do_artykulu, site: interia)
       p name_site + '   Created ' + tytul  + Time.now.to_s
+    end
+  end
+
+  #STYLOWI.PL
+
+  stylowi = 'http://stylowi.pl/'
+
+  styl = Site.find_by(name: 'Stylowi')
+  doc = Nokogiri::HTML(open(stylowi))
+  doc.css('.item_user').each do |nota|
+    kol = nota.css('.stat-kolekcje').text
+    lajk = nota.css('.stat-lajki').text
+    desc = nota.css('.desc').text.strip
+    img = nota.css('img')[0][:src]
+    link = nota.css('a')[0][:href]
+
+    unless styl.articles.find_by(article_url: link) || img.blank?
+      Article.create(kolekcja: kol, lajk: lajk, title: desc, image: img, article_url: link, have_image: true, site: styl)
+      p stylowi + '   Created ' + link + desc  + Time.now.to_s
     end
   end
 end
