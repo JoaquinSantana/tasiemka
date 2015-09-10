@@ -1,14 +1,7 @@
 # @cjsx React.DOM
 
 @GaleryArticle = React.createClass
-  handleEnter: (e) ->
-    b = this.refs.articleref.getDOMNode()
-    $(b).find('.article_num').transition('pulse')
-  handleLeave: (e) ->
-    b = this.refs.articleref.getDOMNode()
-    $(b).find('.article_num').css("background", @props.site.site_color)
   handleViewCount: ->
-    console.log("Click link")
     $.ajax
       type: "PATCH",
       url: "/view_count",
@@ -22,21 +15,28 @@
         alert data
         return false
   render: ->
-    console.log(@props.article)
+    site_color = @props.site.site_color
+    console.log @props.article
     if @props.article.image
       image = @props.article.image
-      console.log image
-    site_color = @props.site.site_color
-    if @props.article.title.length > 50
-      title = @props.article.title.substring(0,49) + "..."
-    else
+    if @props.article.title
       title = @props.article.title
-    if @props.site.name == 'Kozaczek'  
-      article_link = 'http://kozaczek.pl/' + @props.article.article_url
-    else if @props.site.name == 'GwiazdyWP' && @props.article.article_url.substring(0,1) == '/'
-      article_link = 'http://gwiazdy.wp.pl' + @props.article.article_url
-    else
-      article_link = @props.article.article_url
-    <a target="_blank" ref="articleref" href="#{article_link}" onClick={@handleViewCount} onMouseEnter={@handleEnter} onMouseLeave={@handleLeave}>  
-      <img src={image} className="galeryimage"></img>
-    </a>
+    if @props.article.article_url
+      article_url = 'http://stylowi.pl' + @props.article.article_url
+      <figure>
+        <img src={image} className="galeryimage" alt="img25"/>
+        <figcaption>
+          <span>{title}</span>
+          <div className="icons">
+            {
+              if @props.article.lajk
+                <i className="empty heart icon">{' ' +@props.article.lajk}</i>  
+            }
+            {
+              if @props.article.kolekcja
+                <i className="empty star icon">{' ' +@props.article.kolekcja}</i>
+            }
+          </div>
+          <a href={article_url} target="_blank">Zobacz</a>
+        </figcaption> 
+      </figure>

@@ -71,7 +71,7 @@
           >
             {
               @state.articles.map (article, index) =>
-                <div className="col-md-3 galery_article" key={index}>
+                <div className="col-md-3" key={index}>
                   <GaleryArticle key={index} position={@position(article)} article={article} site={@state.site} />
                 </div>
             }

@@ -349,6 +349,12 @@ i.sidebar {
     top: 37%;
   }
 }
+.ui.menu {
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
 
 .hidden_menu {
   padding: 20px 0;
@@ -368,12 +374,103 @@ i.sidebar {
   .galeryimage {
     position: relative;
     float: left;
-    width:  200px;
+    width:  250px;
     height: 200px;
     padding-right: 5px;
     padding-bottom: 5px;
+    
+  }
+}
+
+.grid {
+  padding: 20px 20px 100px 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  list-style: none;
+  text-align: center;
+  .col-md-3 {
+    display: inline-block;
+    width: 440px;
+    margin: 0;
+    text-align: left;
+    position: relative;
+  }
+}
+
+figure {
+  margin: 0;
+  position: relative;
+  transform-style: preserve-3d;
+
+  &:hover {
+    img {
+      transform: translateX(25%);
+    }
+
+    figcaption {
+      opacity: 1;
+      transform: rotateY(0deg);
+      transition: transform 0.4s, opacity 0.1s;
+
+    }
+  }
+  
+  img {
+    display: block;
+    position: relative;
+    width:  250px;
+    height: 250px;
     background-position: 50% 50%;
     background-repeat:   no-repeat;
     background-size:     cover;
+    transition: transform 0.4s;
+  }
+
+  figcaption {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    background: #2c3f52;
+    color: #ed4e6e;
+
+    opacity: 0;
+    backface-visibility: hidden;
+    transform-origin: 0 0;
+    transform: rotateY(-90deg);
+    transition: transform 0.4s, opacity 0.1s 0.3s;
+
+    a {
+      position: absolute;
+      bottom: 20px;
+      right: 42px;
+    }
+    .icons {
+      position: relative;
+      bottom: -192px;
+      .heart {
+        position: absolute;
+        bottom: 60px;
+        right: 42px;
+     }
+    
+      .star {
+        position: absolute;
+        bottom: 60px;
+        right: 22px;
+      } 
+    }
+  }
+}
+
+.articles {
+  .col-md-3  {
+    padding-right: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    perspective: 1700px;
+    perspective-origin: 0 50%;
   }
 }
