@@ -21,7 +21,7 @@ require 'capistrano/rails'
 require 'capistrano/bundler'
 
 set :rbenv_type, :user # or :system, depends on your rbenv setup
-set :rbenv_ruby, '2.2.2-p95'
+set :rbenv_ruby, '2.2.2'
 # require 'capistrano/chruby'
 # require 'capistrano/rails/migrations'
 
