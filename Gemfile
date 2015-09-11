@@ -25,8 +25,6 @@ gem 'awesome-share-buttons', github: 'evansobkowicz/awesome-share-buttons'
 gem 'pg'
 gem 'test-unit', '~> 3.0'
 
-gem 'rails_12factor', group: :production
-
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
