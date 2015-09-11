@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20150902121223) do
   end
 
   add_index "articles", ["site_id"], name: "index_articles_on_site_id"
-  add_index "articles", ["title"], name: "index_articles_on_title", unique: true
+  add_index "articles", ["title"], name: "index_articles_on_title"
 
   create_table "sites", force: :cascade do |t|
     t.text     "name"
