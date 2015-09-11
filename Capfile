@@ -19,7 +19,6 @@ require 'capistrano/deploy'
 require 'capistrano/rbenv'
 require 'capistrano/rails'
 require 'capistrano/bundler'
-require 'capistrano/passenger'
 
 set :rbenv_type, :user # or :system, depends on your rbenv setup
 set :rbenv_ruby, '2.2.2-p95'
