@@ -22,6 +22,7 @@ gem 'iconv'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'whenever', :require => false
 gem 'awesome-share-buttons', github: 'evansobkowicz/awesome-share-buttons'
+gem 'pg'
 
 group :development, :test do
   gem 'byebug'
@@ -33,3 +34,8 @@ group :development, :test do
   gem 'pry-byebug'
 end
 
+group :development do
+  gem 'capistrano', '~> 3.4.0'
+  gem 'capistrano-rails', '~> 1.1.3'
+  gem 'capistrano-rbenv', '~> 2.0.3'
+end
