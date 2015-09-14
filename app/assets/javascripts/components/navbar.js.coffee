@@ -4,7 +4,7 @@
             <i className="facebook icon"></i>
           </div>
     <div className="ui large menu">
-      <img className="logo" src="tasiemka2.png" alt="test" />
+      <img className="logo" src="assets/tasiemka2.png" alt="test" />
       <div className="right menu">
         <div className="item text-center">
           <a href="about">
