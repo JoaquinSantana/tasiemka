@@ -211,6 +211,10 @@ body {
   -o-background-size: cover;
   background-size: cover;
 
+  .btn.btn-block {
+    margin-top: 60px;
+  }
+
   .info_panel {
     position: absolute;
     left: 50%;
@@ -238,7 +242,7 @@ body {
   .info_panek {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 60%;
     transform: translate(-50%, -50%);
     
     /*
@@ -247,8 +251,8 @@ body {
     margin-top: -25%;
     */
     
-    width: 40%;
-    height: 50%;
+    width: 75%;
+    height: 70%;
 
     padding: 20px;  
     background: rgba(255, 255, 255, 0.35);
