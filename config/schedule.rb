@@ -22,5 +22,5 @@
 set :output, "#{path}/log/cron_log.log"
 
 every 4.hours do
-  rake "download_articles", environment: 'development'
+  rake "download_articles", environment: 'production'
 end
