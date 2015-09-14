@@ -4,6 +4,8 @@ lock '3.4.0'
 set :application, 'tasiemka'
 set :repo_url, 'git@bitbucket.org:panczo/tasiemka.git'
 
+set :passenger_restart_with_touch, true
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
