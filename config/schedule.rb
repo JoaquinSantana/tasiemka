@@ -25,7 +25,3 @@ set :bundle_command, "/home/panczo/.rbenv/shims/bundle exec"
 every 5.minutes do
   rake "download_articles", environment: 'production'
 end
-
-every 4.hours do
-  rake "download_articles", environment: 'development'
-end
