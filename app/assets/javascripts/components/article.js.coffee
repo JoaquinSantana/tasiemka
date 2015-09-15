@@ -28,7 +28,7 @@
       article_link = 'http://gwiazdy.wp.pl' + @props.article.article_url
     else
       article_link = @props.article.article_url
-    <a target="_blank" ref="articleref" href="#{article_link}" className="link" onClick={@handleViewCount} onMouseEnter={@handleEnter} onMouseLeave={@handleLeave}>  
+    '<a target="_blank" ref="articleref" href="#{article_link}" className="link" onClick={@handleViewCount} onMouseEnter={@handleEnter} onMouseLeave={@handleLeave}>  
       <div className='col-md-12 article_wrapper infinite-list-item'> 
         <div className='pull-left article_num' style={{background: site_color}}>
           { @props.position }
@@ -37,4 +37,4 @@
           { @props.article.title }
         </div>
       </div>
-    </a>
+    </a>'

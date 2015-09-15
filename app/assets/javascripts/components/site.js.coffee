@@ -56,7 +56,7 @@
   showSidebar: ->
     $('.ui.sidebar').sidebar('toggle')
   render: ->
-    <div className='site', id={@state.site.id}>
+    '<div className='site', id={@state.site.id}>
       <div className='col-sm-4 col-md-4 text-center sites site_wrapper'>
         <div className="kneflik" onClick={@showSidebar} />
         <SiteForm key={@state.site.id} options={@allSite()} siteName={@state.site.name} handleChangeSite={@changeSite} site={@state.site}/>
@@ -77,4 +77,4 @@
           </Infinite>
         </div>
       </div>
-    </div>
+    </div>'
