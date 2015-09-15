@@ -21,6 +21,7 @@
 
 set :output, "#{path}/log/cron_log.log"
 
-every 4.hours do
+every 5.minutes do
+  Rails.logger.info("Try run download_articles rake task at #{Time.now}")
   rake "download_articles", environment: 'production'
 end
