@@ -32,3 +32,4 @@ class @GoogleAnalytics
     gon.google_analytics_id
 
 GoogleAnalytics.load()
+console.log(gon.google_analytics_id)
