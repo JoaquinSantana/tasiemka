@@ -20,10 +20,10 @@
 # Learn more: http://github.com/javan/whenever
 
 set :output, "log/cron_log.log"
-set :bundle_command, "/home/panczo/.rbenv/shims/bundle"
+set :bundle_command, "/home/panczo/.rbenv/shims/bundle exec"
 
 every 5.minutes do
-  exec rake "download_articles", environment: 'production'
+  rake "download_articles", environment: 'production'
 end
 
 every 4.hours do
