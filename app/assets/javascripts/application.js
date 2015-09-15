@@ -20,8 +20,6 @@
 //= require components
 //= require awesome-share-buttons
 //= reqiore custom
-//= require_tree ./utils
-
 //= require_tree .
 
 var Infinite = require('react-infinite');
