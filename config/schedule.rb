@@ -19,9 +19,8 @@
 
 # Learn more: http://github.com/javan/whenever
 
-set :output, "#{path}/log/cron_log.log"
+set :output, "log/cron_log.log"
 
 every 5.minutes do
-  Rails.logger.info("Try run download_articles rake task at #{Time.now}")
   rake "download_articles", environment: 'production'
 end
