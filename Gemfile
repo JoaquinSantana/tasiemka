@@ -23,7 +23,8 @@ gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'whenever', :require => false
 gem 'awesome-share-buttons', github: 'evansobkowicz/awesome-share-buttons'
 gem 'pg'
-gem 'test-unit', '~> 3.0'
+gem 'gon'
+
 
 group :development, :test do
   gem 'byebug'
