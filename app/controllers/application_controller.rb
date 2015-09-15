@@ -8,5 +8,9 @@ class ApplicationController < ActionController::Base
 
   def set_gon_variables
     gon.google_analytics_id = Rails.application.secrets[:google_analytics_id]
+  end  
+
+  def set_gon_variables
+    gon.segmentid = Rails.application.secrets[:segmentid]
   end
 end

@@ -51,6 +51,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    analytics-ruby (2.0.13)
     animate-rails (1.0.8)
       rails
     arel (6.0.3)
@@ -260,6 +261,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  analytics-ruby
   animate-rails
   awesome-share-buttons!
   bootstrap-sass (~> 3.3.5)

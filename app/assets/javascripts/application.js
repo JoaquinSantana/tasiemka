@@ -26,8 +26,7 @@ var Infinite = require('react-infinite');
 
 var ready;
 ready = function() {
-
-
+  analytics.page();
 };
 
 $(document).ready(ready);
