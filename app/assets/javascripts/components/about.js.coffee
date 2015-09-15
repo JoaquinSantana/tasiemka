@@ -1,6 +1,6 @@
 @About = React.createClass
   render: ->
-    '<div className="about_wrapper">
+    <div className="about_wrapper">
       <div className="info_panek">
         <div className="info_panel">
           <div className="page-header">
@@ -14,4 +14,4 @@
           </div>
         </div>
       </div>
-    </div>'
+    </div>

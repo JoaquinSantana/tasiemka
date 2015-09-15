@@ -3,7 +3,7 @@
     facebook_link = <div className="item text-center">
             <i className="facebook icon"></i>
           </div>
-    '<div className="ui large menu">
+    <div className="ui large menu">
       <img className="logo" src="assets/tasiemka2.png" alt="test" />
       <div className="right menu">
         <div className="item text-center">
@@ -15,6 +15,6 @@
           <i className="sidebar icon"></i>
         </div>
       </div>
-    </div>'
+    </div>
 
 

@@ -5,7 +5,7 @@
   getDefaultState: ->
     sites: []
   render: ->
-    '<div className='front_site'>
+    <div className='front_site'>
       <Navbar />
       <div className="ui sidebar right inverted vertical menu">
         <div className="ui large menu inverted hidden_menu">
@@ -26,4 +26,4 @@
           }
         </div>
       </div>
-    </div>'
+    </div>
