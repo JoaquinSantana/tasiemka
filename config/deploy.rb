@@ -5,7 +5,8 @@ set :application, 'tasiemka'
 set :repo_url, 'git@bitbucket.org:panczo/tasiemka.git'
 
 set :passenger_restart_with_touch, true
-set :whenever_roles, ->{ [:web, :app]}
+set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
