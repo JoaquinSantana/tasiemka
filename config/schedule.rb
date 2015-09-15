@@ -22,12 +22,10 @@
 set :output, "log/cron_log.log"
 set :bundle_command, "/home/panczo/.rbenv/shims/bundle"
 
-if Rails.env.production?
-  every 5.minutes do
-    exec rake "download_articles", environment: 'production'
-  end
-else
-  every 5.minutes do
-    rake "download_articles", environment: 'production'
-  end
+every 5.minutes do
+  exec rake "download_articles", environment: 'production'
+end
+
+every 4.hours do
+  rake "download_articles", environment: 'development'
 end
