@@ -22,6 +22,6 @@
 set :output, "log/cron_log.log"
 set :bundle_command, "/home/panczo/.rbenv/shims/bundle exec"
 
-every 5.minutes do
+every 2.hours do
   rake "download_articles", environment: 'production'
 end
