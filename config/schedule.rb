@@ -20,6 +20,7 @@
 # Learn more: http://github.com/javan/whenever
 
 set :output, "log/cron_log.log"
+set :bundle_command, "/home/panczo/.rbenv/shims/bundle"
 
 every 5.minutes do
   rake "download_articles", environment: 'production'
