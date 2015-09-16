@@ -16,18 +16,22 @@ body {
   overflow: hidden;
   /* height:100%; */
   font-family: 'Philosopher-Regular';
-  /* background: -webkit-linear-gradient(90deg, #D38312 10%, #A83279 90%); Chrome 10+, Saf5.1+
-        background:    -moz-linear-gradient(90deg, #D38311 10%, #A83279 90%); FF3.6+
-        background:     -ms-linear-gradient(90deg, #D38312 10%, #A83279 90%); IE10
-        background:      -o-linear-gradient(90deg, #D38312 10%, #A83279 90%); Opera 11.10+
-        background:         linear-gradient(90deg, #D38312 10%, #A83279 90%); W3C
-         */      
+ /*  background: -webkit-linear-gradient(90deg, #D38312 10%, #A83279 90%); Chrome 10+, Saf5.1+
+                background:    -moz-linear-gradient(90deg, #D38311 10%, #A83279 90%); FF3.6+
+                background:     -ms-linear-gradient(90deg, #D38312 10%, #A83279 90%); IE10
+                background:      -o-linear-gradient(90deg, #D38312 10%, #A83279 90%); Opera 11.10+
+                background:         linear-gradient(90deg, #D38312 10%, #A83279 90%); W3C
+          
+            background: -webkit-linear-gradient(90deg, #7b4397 10%, #dc2430 90%); Chrome 10+, Saf5.1+
+            background:    -moz-linear-gradient(90deg, #7b4397 10%, #dc2430 90%); FF3.6+
+            background:     -ms-linear-gradient(90deg, #7b4397 10%, #dc2430 90%); IE10
+            background:      -o-linear-gradient(90deg, #7b4397 10%, #dc2430 90%); Opera 11.10+
+            background:         linear-gradient(90deg, #7b4397 10%, #dc2430 90%); W3C
+          */         
+}
 
-  background: -webkit-linear-gradient(90deg, #7b4397 10%, #dc2430 90%); /* Chrome 10+, Saf5.1+ */
-  background:    -moz-linear-gradient(90deg, #7b4397 10%, #dc2430 90%); /* FF3.6+ */
-  background:     -ms-linear-gradient(90deg, #7b4397 10%, #dc2430 90%); /* IE10 */
-  background:      -o-linear-gradient(90deg, #7b4397 10%, #dc2430 90%); /* Opera 11.10+ */
-  background:         linear-gradient(90deg, #7b4397 10%, #dc2430 90%); /* W3C */
+.ui.sidebar {
+  z-index: 0
 }
 
 .logo {
@@ -64,7 +68,7 @@ body {
   margin-bottom: 0px;
   margin-top: 15px;
   background: rgba(200, 54, 54, 0.5);
-
+  z-index: 2;
   .site_wrapper {
     /* border: 3px solid white; */
   }
@@ -349,6 +353,12 @@ i.sidebar {
     top: 37%;
   }
 }
+.ui.menu {
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
 
 .hidden_menu {
   padding: 20px 0;
@@ -362,4 +372,109 @@ i.sidebar {
 
 .about_site {
   margin-bottom: 0px !important;
+}
+
+.galery_article {
+  .galeryimage {
+    position: relative;
+    float: left;
+    width:  250px;
+    height: 200px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    
+  }
+}
+
+.grid {
+  padding: 20px 20px 100px 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  list-style: none;
+  text-align: center;
+  .col-md-3 {
+    display: inline-block;
+    width: 440px;
+    margin: 0;
+    text-align: left;
+    position: relative;
+  }
+}
+
+figure {
+  margin: 0;
+  position: relative;
+  transform-style: preserve-3d;
+
+  &:hover {
+    img {
+      transform: translateX(25%);
+    }
+
+    figcaption {
+      opacity: 1;
+      transform: rotateY(0deg);
+      transition: transform 0.4s, opacity 0.1s;
+
+    }
+  }
+  
+  img {
+    display: block;
+    position: relative;
+    width:  250px;
+    height: 250px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+    transition: transform 0.4s;
+  }
+
+  figcaption {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    background: #2c3f52;
+    color: #ed4e6e;
+
+    opacity: 0;
+    backface-visibility: hidden;
+    transform-origin: 0 0;
+    transform: rotateY(-90deg);
+    transition: transform 0.4s, opacity 0.1s 0.3s;
+
+    a {
+      position: absolute;
+      bottom: 20px;
+      right: 42px;
+    }
+    .icons {
+      position: relative;
+      bottom: -192px;
+      .heart {
+        position: absolute;
+        bottom: 60px;
+        right: 42px;
+     }
+    
+      .star {
+        position: absolute;
+        bottom: 60px;
+        right: 22px;
+      } 
+    }
+  }
+}
+
+.articles {
+  .col-md-3  {
+    padding-right: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    perspective: 1700px;
+    perspective-origin: 0 50%;
+  }
 }
