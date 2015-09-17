@@ -54,6 +54,9 @@ GEM
     analytics-ruby (2.0.13)
     animate-rails (1.0.8)
       rails
+    annotate (2.6.10)
+      activerecord (>= 3.2, <= 4.3)
+      rake (~> 10.4)
     arel (6.0.3)
     autoprefixer-rails (5.2.1.1)
       execjs
@@ -263,6 +266,7 @@ PLATFORMS
 DEPENDENCIES
   analytics-ruby
   animate-rails
+  annotate
   awesome-share-buttons!
   bootstrap-sass (~> 3.3.5)
   browserify-rails (~> 0.9.1)

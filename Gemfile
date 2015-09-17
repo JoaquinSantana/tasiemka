@@ -25,6 +25,7 @@ gem 'awesome-share-buttons', github: 'evansobkowicz/awesome-share-buttons'
 gem 'pg'
 gem 'gon'
 gem 'analytics-ruby', :require => "segment"
+gem 'annotate'
 
 group :development, :test do
   gem 'byebug'

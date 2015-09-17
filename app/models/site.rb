@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: sites
+#
+#  id           :integer          not null, primary key
+#  name         :text
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  favurl       :text
+#  site_color   :string
+#  visits_count :integer          default(0)
+#  have_image   :boolean
+#
+
 class Site < ActiveRecord::Base
   has_many :articles, dependent: :destroy
 

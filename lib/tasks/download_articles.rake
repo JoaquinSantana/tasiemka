@@ -72,8 +72,9 @@ task :download_articles => :environment do
   doc.css('.mainLeftColumn article').each do |art|
     link_do_artykulu = art.css('h1 a')[0][:href]
     tytul = art.css('h1 a').text.strip.gsub(?", "'")
-    unless tvn24.articles.find_by(title: tytul) || tytul.blank?
-      Article.create(title: tytul, article_url: link_do_artykulu, site: tvn24)
+    photo = art.css('.lazy-photo-container img')[0].attribute("data-original").value unless art.css('.lazy-photo-container img')[0].attribute("data-original").blank?
+    unless tvn24.articles.find_by(title: tytul) || tytul.blank? || photo.blank?
+      Article.create(title: tytul, article_url: link_do_artykulu, site: tvn24, image: photo)
       p name_site + '   Created ' + tytul  + Time.now.to_s
     end
   end
