@@ -23,20 +23,21 @@
       title = @props.article.title
     if @props.article.article_url
       article_url = 'http://stylowi.pl' + @props.article.article_url
-      <figure>
-        <img src={image} className="galeryimage" alt="img25"/>
-        <figcaption>
-          <span>{title}</span>
-          <div className="icons">
-            {
-              if @props.article.lajk
-                <i className="empty heart icon">{' ' +@props.article.lajk}</i>  
-            }
-            {
-              if @props.article.kolekcja
-                <i className="empty star icon">{' ' +@props.article.kolekcja}</i>
-            }
-          </div>
-          <a href={article_url} target="_blank">Zobacz</a>
-        </figcaption> 
-      </figure>
+      <a href={article_url} target="_blank">
+        <figure>
+          <img src={image} className="galeryimage" alt="img25"/>
+          <figcaption style={{"border-color": site_color}}>
+            <div className="title">{title}</div>
+            <div className="icons">
+              {
+                if @props.article.lajk
+                  <i className="empty heart icon">{@props.article.lajk}</i>  
+              }
+              {
+                if @props.article.kolekcja
+                  <i className="empty star icon">{@props.article.kolekcja}</i>
+              }
+            </div>
+          </figcaption> 
+        </figure>
+      </a>
