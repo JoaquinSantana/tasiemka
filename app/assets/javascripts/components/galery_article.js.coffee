@@ -16,17 +16,30 @@
         return false
   render: ->
     site_color = @props.site.site_color
-    console.log @props.article
     if @props.article.image
       image = @props.article.image
     if @props.article.title
       title = @props.article.title
     if @props.article.article_url
-      article_url = 'http://stylowi.pl' + @props.article.article_url
-      <a href={article_url} target="_blank">
+      switch @props.site.name 
+        when "Onet"
+          article_url = @props.article.article_url  
+        when "Interia"
+          article_url = @props.article.article_url  
+        when "TVN24"
+          article_url = @props.article.article_url
+        when "Pudelek"
+          article_url = @props.article.article_url
+        when "Kozaczek"
+          article_url = 'http://kozaczek.pl/' + @props.article.article_url
+        when "GwiazdyWP"
+          article_url = 'http://gwiazdy.wp.pl' + @props.article.article_url
+        when "Stylowi"
+          article_url = 'http://stylowi.pl' + @props.article.article_url
+      <a href={article_url} target="_blank" onClick={@handleViewCount}>
         <figure>
           <img src={image} className="galeryimage" alt="img25"/>
-          <figcaption style={{"border-color": site_color}}>
+          <figcaption style={{"borderColor": site_color}}>
             <div className="title">{title}</div>
             <div className="icons">
               {

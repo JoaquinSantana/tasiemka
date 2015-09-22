@@ -2,7 +2,7 @@
   getInitialState: ->
     sites: @props.sites
     all_site: @props.all_site
-    styles: { "layout": "3-kol" }
+    styles: { "layout": "2-kol" }
   componentDidMount: ->
     rootNode = React.findDOMNode(this)
 
@@ -11,21 +11,32 @@
     })
   getDefaultState: ->
     sites: []
-    styles: {}
+    styles: { "layout": "2-kol" }
   changeLayout: (e) ->
     @setState styles: { "layout": e }
     console.log("Zmiana layoutu na:" + e)
   render: ->
+    active2 = <Active /> if @state.styles.layout == '2-kol'
+    active3 = <Active /> if @state.styles.layout == '3-kol'
+      
     <div className='front_site' style={{"color": "red"}}>
       <div className="ui sidebar right inverted vertical menu">
-        <div className="ui large menu inverted hidden_menu">
-          <div className="ui centered grid">
-            <div className="one wide column">
-              <h1>Tasiemka</h1>
-                <li onClick={@changeLayout.bind(this, '3-kol')} style={{"color": "red"}}>Trzy kolumny</li>
-                <li onClick={@changeLayout.bind(this, '2-kol')} style={{"color": "red"}}>Dwie kolumny</li>
+        <div className="row ui large menu inverted hidden_menu">
+          
+            <div className="col-md-12">
+              <h1 className="text-center">Tasiemka</h1>
+              <div className="layoutlist list-unstyled">
+                <li className="text-center" onClick={@changeLayout.bind(this, '2-kol')}>
+                  <h3>Dwie kolumny</h3>
+                  <i className="fa fa-th-list">{active2}</i>
+                </li>
+                <li className="text-center" onClick={@changeLayout.bind(this, '3-kol')}>
+                  <h3>Trzy kolumny</h3>
+                  <i className="fa fa-th">{ active3 }</i>
+                </li>
+              </div>
             </div>
-          </div>
+          
         </div>
       </div>
       <div className="pusher" style={{"background": "white"}}>
@@ -34,7 +45,8 @@
           { 
             if @state.styles.layout == '2-kol'
               first_site = @state.sites[0]
-              galery_site = @state.sites[1]
+              galery_site = @state.sites[2]
+              console.log(@state.sites)
               <div key={first_site.id} className="LOLOLO">
                 <Site id={first_site.id} site={first_site} articles={first_site.articles} all_site={@props.all_site} />   
                 <GalerySite id={galery_site.id} site={galery_site} articles={galery_site.articles} all_site={@props.all_site} />

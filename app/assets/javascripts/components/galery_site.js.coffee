@@ -8,8 +8,11 @@
     newArticles: []
     site: @props.site
   allSite: ->
+    allsite = []
     @state.all_site.map (site) =>
-      [site.id, site.name]
+      if site.have_image
+        allsite.push [site.id, site.name]
+    return allsite
   changeSite: (site) ->
     $.ajax
       method: 'GET'
@@ -56,8 +59,6 @@
   showSidebar: ->
     $('.ui.sidebar').sidebar('toggle')
   render: ->
-    test = @state.articles.map (article, index) ->
-      console.log(article)
     <div className='site', id={@state.site.id}>
       <div className='col-sm-8 col-md-8 text-center sites site_wrapper galery_site'>
         <SiteForm key={@state.site.id} options={@allSite()} siteName={@state.site.name} handleChangeSite={@changeSite} site={@state.site}/>
@@ -79,10 +80,3 @@
         </div>
       </div>
     </div>
-###
-
-                  {
-                state.articles.each_slice 3, (slice) ->
-                  slice.map (article, index) ->
-                    console.log article, index
-              }###

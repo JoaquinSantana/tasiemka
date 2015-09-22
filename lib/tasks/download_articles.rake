@@ -13,8 +13,9 @@ task :download_articles => :environment do
     data_dodania_artykulu = article.css('.time').text
     link_do_artykulu = article.css('a')[0][:href]
     tytul =  article.css('.entry__header h3 a').text.strip.gsub(?", "'")
+    img = article.css("img")[0].attribute("src").value
     unless pudelek.articles.find_by(title: tytul)
-      Article.create(title: tytul, article_url: link_do_artykulu, dodano: data_dodania_artykulu, site: pudelek)
+      Article.create(title: tytul, article_url: link_do_artykulu, dodano: data_dodania_artykulu, image: img, site: pudelek)
       p name_site + '   Created ' + tytul + Time.now.to_s
     end
   end
@@ -27,9 +28,10 @@ task :download_articles => :environment do
     data_dodania_artykulu = art.css('.nsg_date').text
     link_do_artykulu = art.css('.nsg_title a')[0] ? art.css('.nsg_title a')[0][:href] : ""
     tytul = art.css('.nsg_title a')[0] ? art.css('.nsg_title a')[0][:title] : ""
+    img = art.css('.nsg_image img')[0] ? art.css('.nsg_image img').attribute("src").value : ""
     unless kozaczek.articles.find_by(title: tytul)
       unless link_do_artykulu.empty? && tytul.empty?
-        Article.create(title: tytul, article_url: link_do_artykulu, dodano: data_dodania_artykulu, site: kozaczek)
+        Article.create(title: tytul, article_url: link_do_artykulu, dodano: data_dodania_artykulu, image: img, site: kozaczek)
         p name_site + '   Created ' + tytul + Time.now.to_s
       end
     end
@@ -43,8 +45,9 @@ task :download_articles => :environment do
   #data_dodania_artykulu = art.css('.nsg_date').text
     link_do_artykulu = art.css('a')[0][:href]
     tytul = art.css('a h2').text
+    img = art.css('.teaser--img-wrapper img')[0].attribute("src").value
     unless gwiazdy.articles.find_by(title: tytul)
-      Article.create(title: tytul, article_url: link_do_artykulu, site: gwiazdy)
+      Article.create(title: tytul, article_url: link_do_artykulu, image: img, site: gwiazdy)
       p name_site + '   Created ' + tytul + Time.now.to_s
     end
   end

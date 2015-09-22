@@ -31,7 +31,45 @@ body {
 }
 
 .ui.sidebar {
-  z-index: 0
+  .fa {
+    color: $dark_gray;
+    cursor: pointer;
+    font-size: 8em;
+  }
+
+  .layoutlist {
+    margin-top: 8em;
+    color: $light_gray;
+    
+    li {
+      padding-bottom: 1em;
+    }
+    .fa {
+      position: relative;
+      @include transition(0.8s);
+      &:hover {
+        @include transition(0.8s);
+        color: darken($pink_maincolor, 20%);
+
+        .fa-check {
+          color: $light_gray;
+          @include transition(0.8s);
+        }
+      }
+      .fa-check {
+        color: darken($pink_maincolor, 20%);
+        position: absolute;
+        font-size: 0.5em;
+        left:0;
+        top: 0.5em;
+        right:0;
+        margin-left:auto;
+        margin-right:auto;
+        @include transition(0.8s);
+      }
+    }
+
+  }
 }
 
 .logo {
@@ -410,7 +448,7 @@ figure {
 
   &:hover {
     img {
-      transform: translateY(-75px);
+      transform: translateX(-75px);
       transition: transform 0.6s, opacity 0.1s;
     }
 
