@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext);
+
 body {
   
         
@@ -7,8 +9,8 @@ body {
   font-family: 'Philosopher-Regular';
   src:font-url('Philosopher-Regular.eot');
   src:font-url('Philosopher-Regular.eot?#iefix') format('embedded-opentype'),
-    font-url('Philosopher-Regular.svg#Philosopher-Regular') format('svg'),
-    font-url('Philosopher-Regular.ttf') format('truetype');
+  font-url('Philosopher-Regular.svg#Philosopher-Regular') format('svg'),
+  font-url('Philosopher-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -103,6 +105,7 @@ body {
 
 
 .sites_wrapper {
+  font-family: 'Open Sans', sans-serif;
   margin-bottom: 0px;
   margin-top: 15px;
   background: rgba(200, 54, 54, 0.5);
