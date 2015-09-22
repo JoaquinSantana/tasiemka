@@ -1,8 +1,8 @@
 class SitesController < ApplicationController
   
   def index
-    @sites = Site.all.limit(3)
-    @sitesname = Site.all
+    @sites = Site.all.order(:id).limit(3)
+    @sitesname = Site.all.order(:id)
   end
 
   def load_article

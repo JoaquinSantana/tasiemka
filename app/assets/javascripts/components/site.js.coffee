@@ -8,7 +8,7 @@
     newArticles: []
     site: @props.site
   allSite: ->
-    @state.all_site.map (site) =>
+    @state.all_site[0..-2].map (site) =>
       [site.id, site.name]
   changeSite: (site) ->
     $.ajax
