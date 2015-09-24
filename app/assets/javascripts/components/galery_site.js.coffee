@@ -11,7 +11,7 @@
     allsite = []
     @state.all_site.map (site) =>
       if site.have_image
-        allsite.push [site.id, site.name]
+        allsite.push [site.id, site.name, site.favurl]
     return allsite
   changeSite: (site) ->
     $.ajax

@@ -14,5 +14,5 @@ $(document).on "page:change", ->
     e.stopPropagation()
     $('.ui.sidebar').sidebar('toggle')
 
-  $('.ui.dropdown').dropdown();
+  ###$('.ui.dropdown').dropdown();###
   

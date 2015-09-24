@@ -2,7 +2,7 @@
   getInitialState: ->
     sites: @props.sites
     all_site: @props.all_site
-    styles: { "layout": "2-kol" }
+    styles: { "layout": "3-kol" }
   componentDidMount: ->
     rootNode = React.findDOMNode(this)
 
@@ -11,7 +11,7 @@
     })
   getDefaultState: ->
     sites: []
-    styles: { "layout": "2-kol" }
+    styles: { "layout": "3-kol" }
   changeLayout: (e) ->
     @setState styles: { "layout": e }
     console.log("Zmiana layoutu na:" + e)

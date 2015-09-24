@@ -7,5 +7,5 @@ json.sites @sites do |site|
 end
 
 json.all_site @sitesname do |s|
-  json.extract! s, :id, :name, :have_image
+  json.extract! s, :id, :name, :have_image, :favurl
 end
