@@ -7,6 +7,14 @@
   getDefaultState: ->
     options: []
   componentDidMount: ->
+    $('.searchheader')
+      .popup({
+        inline   : true,
+        hoverable: true,
+        position : 'right center',
+        transition: 'pulse'
+      });
+
     $('.ui.dropdown')
       .dropdown()
     ;
@@ -23,7 +31,7 @@
     sitename = @props.sitename
     <div className="row">
       <div className="col-md-12">
-        <div className="searchheader ui floating dropdown labeled icon button pull-left">
+        <div className="searchheader ui floating dropdown labeled icon button pull-left" data-content="Wybierz stronę z której chcesz zobaczyć wiadomości">
           <i className="filter icon"></i>
           <span className="text">
             <LogoFavicon link={@props.site.favurl} />

@@ -59,9 +59,6 @@
     <div className='site', id={@state.site.id}>
       <div className='col-sm-4 col-md-4 text-center sites site_wrapper'>
         <div className="kneflik" onClick={@showSidebar} />
-        {
-          console.log(@allSite())
-        }
         <SiteForm key={@state.site.id} options={@allSite()} siteName={@state.site.name} handleChangeSite={@changeSite} site={@state.site}/>
         <div className='articles' ref='articlesref'>
           <Infinite elementHeight={40}

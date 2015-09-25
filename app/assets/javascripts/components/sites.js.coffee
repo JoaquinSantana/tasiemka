@@ -34,6 +34,9 @@
                   <h3>Trzy kolumny</h3>
                   <i className="fa fa-th">{ active3 }</i>
                 </li>
+                <li className="text-center facebook_like">
+                  <div className="fb-like" data-href="https://www.facebook.com/tasiemka.info" data-layout="box_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                </li>
               </div>
             </div>
           
