@@ -7,12 +7,8 @@
       url: "/view_count",
       data: { id: @props.site.id, article_id: @props.article.id }
       success:(data) ->
-        alert data
-        alert("success")
         return false
       error:(data) ->
-        alert("error")
-        alert data
         return false
   render: ->
     site_color = @props.site.site_color

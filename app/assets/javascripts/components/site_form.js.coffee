@@ -7,13 +7,14 @@
   getDefaultState: ->
     options: []
   componentDidMount: ->
-    $('.searchheader')
+    ###$('.searchheader')
       .popup({
+        'reposition',
         inline   : true,
         hoverable: true,
         position : 'right center',
         transition: 'pulse'
-      });
+      });###
 
     $('.ui.dropdown')
       .dropdown()

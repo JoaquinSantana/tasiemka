@@ -9,6 +9,10 @@
     $(rootNode).find('.ui.sidebar').sidebar({
        context: $(rootNode)
     })
+
+    $('#close_sidebar').click (e) ->
+      e.stopPropagation()
+      $('.ui.sidebar').sidebar('toggle')
   getDefaultState: ->
     sites: []
     styles: { "layout": "2-kol" }
@@ -24,7 +28,12 @@
         <div className="row ui large menu inverted hidden_menu">
           
             <div className="col-md-12">
-              <h1 className="text-center">Tasiemka</h1>
+              <div className='row'>
+                <div className="col-md-12 clearfix">
+                  <i id='close_sidebar' className="fa fa-times pull-left"></i> 
+                  <h1 className="navbar_logo text-center">Tasiemka</h1>
+                </div>
+              </div>
               <div className="layoutlist list-unstyled">
                 <li className="text-center" onClick={@changeLayout.bind(this, '2-kol')}>
                   <h3>Dwie kolumny</h3>

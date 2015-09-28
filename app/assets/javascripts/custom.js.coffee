@@ -10,9 +10,5 @@ $(document).on "page:change", ->
       return
     ).addClass 'animated flash'
 
-  $('#knefel').click (e) ->
-    e.stopPropagation()
-    $('.ui.sidebar').sidebar('toggle')
-
   ###$('.ui.dropdown').dropdown();###
   

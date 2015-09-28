@@ -4,8 +4,12 @@
       .popup({
         inline   : true,
         hoverable: true,
-        position : 'bottom left'
+        position : 'bottom left',
+        inverted: true
       });
+    $('#knefel').click (e) ->
+      e.stopPropagation()
+      $('.ui.sidebar').sidebar('toggle')
   render: ->
     facebook_link = 
       <div className="item text-center" data-content="Zobacz nasz profil na Facebooku">
