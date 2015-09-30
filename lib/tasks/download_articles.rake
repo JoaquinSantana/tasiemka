@@ -6,6 +6,7 @@ task :download_articles => :environment do
   require 'iconv'
   
   #PUDELEK
+
   pudelek = Site.find_by(name: 'Pudelek')
   name_site = "http://" + pudelek.name.downcase + ".pl"
   doc = Nokogiri::HTML(open(name_site))
@@ -66,19 +67,44 @@ task :download_articles => :environment do
   end
 
   #TVN24
-  
+
+  tvn_sites = %w{
+    http://www.tvn24.pl/kultura-styl,8
+    http://www.tvn24.pl/ciekawostki-michalki,5
+    http://www.tvn24.pl/pogoda,7
+    http://www.tvn24.pl/wiadomosci-ze-swiata,2
+    http://sport.tvn24.pl/
+    http://www.tvn24.pl/wiadomosci-z-kraju,3
+    }
+
   tvn24 = Site.find_by(name: 'TVN24')
-  name_site = 'http://www.tvn24.pl'
   ic = Iconv.new('UTF-8//IGNORE', 'UTF-8')
-  valid_string = ic.iconv(open(name_site).read)
-  doc = Nokogiri::HTML(valid_string)
-  doc.css('.mainLeftColumn article').each do |art|
-    link_do_artykulu = art.css('h1 a')[0][:href]
-    tytul = art.css('h1 a').text.strip.gsub(?", "'")
-    photo = art.css('.lazy-photo-container img')[0].attribute("data-original").value unless art.css('.lazy-photo-container img')[0].attribute("data-original").blank?
-    unless tvn24.articles.find_by(title: tytul) || tytul.blank? || photo.blank?
-      Article.create(title: tytul, article_url: link_do_artykulu, site: tvn24, image: photo)
-      p name_site + '   Created ' + tytul  + Time.now.to_s
+  
+  tvn_sites.each do |name_site|
+    case name_site
+    when 'http://www.tvn24.pl/kultura-styl,8'
+      category = tvn24.categories.where(name: 'Kultura_i_styl').first
+    when 'http://www.tvn24.pl/ciekawostki-michalki,5'
+      category = tvn24.categories.where(name: 'Ciekawostki').first
+    when "http://www.tvn24.pl/pogoda,7"
+      category = tvn24.categories.where(name: 'Pogoda').first
+    when "http://www.tvn24.pl/wiadomosci-ze-swiata,2"
+      category = tvn24.categories.where(name: 'Świat').first
+    when "http://sport.tvn24.pl/"
+      category = tvn24.categories.where(name: 'Sport').first
+    when "http://www.tvn24.pl/wiadomosci-z-kraju,3"
+      category = tvn24.categories.where(name: 'Polska').first
+    end
+    valid_string = ic.iconv(open(name_site).read)
+    doc = Nokogiri::HTML(valid_string)
+    doc.css('.mainLeftColumn article').each do |art|
+      link_do_artykulu = art.css('h1 a')[0][:href]
+      tytul = art.css('h1 a').text.strip.gsub(?", "'")
+      photo = art.css('.lazy-photo-container img')[0].attribute("data-original").value unless art.css('.lazy-photo-container img')[0].attribute("data-original").blank?
+      unless tvn24.articles.find_by(title: tytul) || tytul.blank? || photo.blank?
+        Article.create(title: tytul, article_url: link_do_artykulu, image: photo, category: category, site: tvn24)
+        p name_site + '   Created ' + tytul  + Time.now.to_s
+      end
     end
   end
 

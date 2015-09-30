@@ -23,7 +23,7 @@
         when "Interia"
           article_url = @props.article.article_url  
         when "TVN24"
-          article_url = @props.article.article_url
+          article_url = 'http://tvn24.pl/' + @props.article.article_url
         when "Pudelek"
           article_url = @props.article.article_url
         when "Kozaczek"

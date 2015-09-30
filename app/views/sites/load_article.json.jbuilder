@@ -1,4 +1,13 @@
 json.(@site, :id, :name, :favurl, :site_color)
-json.articles @site.articles.limit(20) do |article|
-  json.extract! article, :id, :title, :article_url, :image, :kolekcja, :lajk, :site_id
+if @articles
+  json.articles @articles.limit(20) do |article|
+    json.extract! article, :id, :title, :article_url, :image, :kolekcja, :lajk, :site_id, :category
+  end
+else
+  json.articles @site.articles.limit(20) do |article|
+    json.extract! article, :id, :title, :article_url, :image, :kolekcja, :lajk, :site_id, :category
+  end
+end
+json.categories @site.categories do |category|
+  json.extract! category, :id, :name, :color, :site_id
 end

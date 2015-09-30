@@ -7,6 +7,7 @@
     isInfiniteLoading: false
     newArticles: []
     site: @props.site
+    selectedCategory: ''
   allSite: ->
     allsite = []
     @state.all_site.map (site) =>
@@ -24,15 +25,31 @@
         @setState articles: data.articles, site: data
     b = React.findDOMNode(@refs.articlesref)
     $(b).transition('pulse') 
-    #$('.articles').transition('shake') 
+    #$('.articles').transition('shake')
+  changeCategory: (e) ->
+    name = @state.site.name
+    category = e
+    @setState selectedCategory: category
+    $.ajax
+      method: 'GET'
+      url: "sites/" + name
+      dataType: 'JSON'
+      data: { name, category }
+      success: (data) =>
+        #Displat new articles
+        @setState articles: data.articles, site: data
+    b = React.findDOMNode(@refs.articlesref)
+    $(b).transition('pulse') 
+    #$('.articles').transition('shake')
   position: (article) ->
     position = @state.articles.indexOf(article) + 1;
   downloadArticles: ->
+    category = @state.selectedCategory if @state.selectedCategory.length > 0
     lastArticle = @state.articles[@state.articles.length - 1]
     $.ajax
       method: 'GET'
       url: "get_articles/" + @state.site.id
-      data: { lastElem: lastArticle.id, act_site: @state.site.id }
+      data: { lastElem: lastArticle.id, act_site: @state.site.id, category }
       success: (data) =>
         @setState newArticles: data
   handleInfiniteLoad: ->
@@ -61,7 +78,7 @@
   render: ->
     <div className='site', id={@state.site.id}>
       <div className='col-sm-8 col-md-8 text-center sites site_wrapper galery_site'>
-        <SiteForm key={@state.site.id} options={@allSite()} siteName={@state.site.name} handleChangeSite={@changeSite} site={@state.site}/>
+        <GalerySiteForm key={@state.site.id} options={@allSite()} siteName={@state.site.name} handleChangeCategorySite={@changeCategory} handleChangeSite={@changeSite} site={@state.site}/>
         <div className='articles' ref='articlesref'>
           <Infinite elementHeight={50}
                            containerHeight={750}
@@ -72,7 +89,11 @@
           >
             {
               @state.articles.map (article, index) =>
-                <div className="col-md-3" key={index}>
+                if article.category
+                  style = {
+                    "boxShadow": "0px 0px 5px #{article.category.color}"
+                  }
+                <div className="col-md-3" key={index} >
                   <GaleryArticle key={index} position={@position(article)} article={article} site={@state.site} />
                 </div>
             }

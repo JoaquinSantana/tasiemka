@@ -14,10 +14,16 @@
 
 class Site < ActiveRecord::Base
   has_many :articles, dependent: :destroy
+  has_many :categories
 
-  def next_article(last_article)
+  def next_article(last_article, category=nil)
     prev_article = last_article.id
-    articles_ids = articles.pluck(:id)
+    if category
+      articles_ids = articles.where(category: category).pluck(:id)
+    else
+      articles_ids = articles.pluck(:id)
+    end
+
     next_element = articles_ids[articles_ids.index(prev_article) + 1]
     if next_element.nil?
       return

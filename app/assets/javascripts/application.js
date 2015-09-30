@@ -18,7 +18,6 @@
 //= require react_ujs
 //= require semantic-ui
 //= require components
-//= require awesome-share-buttons
 //= reqiore custom
 //= require_tree .
 

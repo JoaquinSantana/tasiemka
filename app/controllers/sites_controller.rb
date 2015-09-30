@@ -7,9 +7,17 @@ class SitesController < ApplicationController
 
   def load_article
     name = params[:name].to_s
-    @site = Site.find_by(name: name)
-  end
+    site = Site.find_by(name: name)
     
+    if params[:category]
+      category = Category.find_by(name: params[:category].to_s)
+      @articles = site.articles.where(category: category)
+      @site = site
+    else
+      @site = site
+    end
+  end
+
   def view_count
     site = Site.find(params[:id])
     article = Article.find(params[:article_id])
