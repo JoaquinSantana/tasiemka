@@ -23,7 +23,11 @@
         when "Interia"
           article_url = @props.article.article_url  
         when "TVN24"
-          article_url = 'http://tvn24.pl/' + @props.article.article_url
+          if @props.article.article_url.substring(0,4) == 'http'
+            article_url = @props.article.article_url
+          else
+            article_url = 'http://tvn24.pl/' + @props.article.article_url
+          console.log(article_url)
         when "Pudelek"
           article_url = @props.article.article_url
         when "Kozaczek"
