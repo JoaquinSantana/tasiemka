@@ -53,6 +53,7 @@
       </div>
       <div className="pusher" style={{"background": "white"}}>
         <Navbar />
+        <Newsletter />
         <div className="sites_wrapper">
           { 
             if @state.styles.layout == '2-kol'

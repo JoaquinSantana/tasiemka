@@ -418,6 +418,18 @@ i.sidebar {
       top: 37%;
     }
   }
+
+  .kontakt {
+    margin-right: 55px;
+    button.inverted.red {
+      color: darken($pink_maincolor, 20%);
+      box-shadow: 0px 0px 0px 2px $pink_maincolor inset !important;
+      &:hover,&:focus,&:active {
+        background-color: $pink_maincolor;
+        color: white;
+      }
+    }
+  }
 }
 
 .hidden_menu {

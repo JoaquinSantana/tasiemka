@@ -27,7 +27,6 @@
             article_url = @props.article.article_url
           else
             article_url = 'http://tvn24.pl/' + @props.article.article_url
-          console.log(article_url)
         when "Pudelek"
           article_url = @props.article.article_url
         when "Kozaczek"
