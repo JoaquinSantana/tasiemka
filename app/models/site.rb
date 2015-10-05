@@ -10,6 +10,7 @@
 #  site_color   :string
 #  visits_count :integer          default(0)
 #  have_image   :boolean
+#  only_image   :boolean          default(FALSE)
 #
 
 class Site < ActiveRecord::Base
@@ -19,6 +20,7 @@ class Site < ActiveRecord::Base
   def next_article(last_article, category=nil)
     prev_article = last_article.id
     if category
+      p category.inspect
       articles_ids = articles.where(category: category).pluck(:id)
     else
       articles_ids = articles.pluck(:id)

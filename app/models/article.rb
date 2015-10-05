@@ -14,6 +14,7 @@
 #  kolekcja     :string
 #  lajk         :string
 #  have_image   :boolean
+#  category_id  :integer
 #
 
 class Article < ActiveRecord::Base

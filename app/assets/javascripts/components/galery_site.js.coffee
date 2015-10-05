@@ -15,6 +15,7 @@
         allsite.push [site.id, site.name, site.favurl]
     return allsite
   changeSite: (site) ->
+    @setState selectedCategory: ''
     $.ajax
       method: 'GET'
       url: "sites/" + site
@@ -36,8 +37,9 @@
       dataType: 'JSON'
       data: { name, category }
       success: (data) =>
+        console.log(data)
         #Displat new articles
-        @setState articles: data.articles, site: data
+        @setState articles: data.articles, site: data 
     b = React.findDOMNode(@refs.articlesref)
     $(b).transition('pulse') 
     #$('.articles').transition('shake')
