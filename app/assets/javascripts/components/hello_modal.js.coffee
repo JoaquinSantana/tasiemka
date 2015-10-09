@@ -53,7 +53,7 @@
             <i className="bar chart icon"></i>
           </h4>
 
-          <div className="two fluid ui inverted buttons">
+          <div className="two fluid ui inverted button">
             <input type="submit" value="Wyślij" className="ui button inverted red" ></input>
           </div>
 

@@ -630,3 +630,11 @@ body > div.about_wrapper > div.info_panel > div.col-md-8.col-md-offset-2 > a {
     color: white;
   } 
 }
+
+
+html body div.sites_component div.front_site.pushable div.pusher div.ui.dimmer.modals.page.transition.visible.active div.ui.small.modal.transition.visible.active {
+  top: 100px;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 50%;
+}
