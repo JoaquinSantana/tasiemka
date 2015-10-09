@@ -11,10 +11,7 @@
       e.stopPropagation()
       $('.ui.sidebar').sidebar('toggle')
   showModal: ->
-    $('.modal').modal({
-      blurring: true
-    })
-    .modal('show');
+    $(window).trigger('modal.visible')
   render: ->
     newsletter = 
       <div className="item text-center kontakt" onClick={@showModal}>

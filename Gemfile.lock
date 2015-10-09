@@ -43,6 +43,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    airbrussh (0.7.0)
+      sshkit (>= 1.6.1, != 1.7.0)
     analytics-ruby (2.0.13)
     animate-rails (1.0.8)
       rails
@@ -280,6 +282,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  airbrussh
   analytics-ruby
   animate-rails
   annotate

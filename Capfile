@@ -19,6 +19,7 @@ require 'capistrano/rbenv'
 require 'capistrano/rails'
 require 'capistrano/bundler'
 
+require 'airbrussh/capistrano'
 require 'whenever/capistrano'
 
 set :rbenv_type, :user # or :system, depends on your rbenv setup

@@ -19,6 +19,8 @@
   changeLayout: (e) ->
     @setState styles: { "layout": e }
     console.log("Zmiana layoutu na:" + e)
+  showModal: ->
+    $(window).trigger('modal.visible')
   render: ->
     active2 = <Active /> if @state.styles.layout == '2-kol'
     active3 = <Active /> if @state.styles.layout == '3-kol'
@@ -53,7 +55,7 @@
       </div>
       <div className="pusher" style={{"background": "white"}}>
         <Navbar />
-        <Newsletter />
+        <NewsletterPage />
         <div className="sites_wrapper">
           { 
             if @state.styles.layout == '2-kol'

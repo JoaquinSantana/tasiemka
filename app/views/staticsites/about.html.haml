@@ -11,8 +11,9 @@
     .item.text-center
       %a{ "href": "about"}
         %i.info.icon
-    .item.text-center
-      %i.facebook.icon
+    .item.text-center{'data-content': "Zobacz nasz profil na Facebooku"}
+      %a{ href: "https://www.facebook.com/tasiemka.info"}
+        %i.facebook.icon
 .about_wrapper
   .info_panek
   .info_panel
@@ -22,4 +23,4 @@
       %p Tasiemka to strona z najnowszymi informacjami znajdującymi się na największych portalach internetowych. Tasiemka zbiera wydarzenia z takich stron jak Onet, TVN24 czy też Interia. 
       %p W najbliższej przyszłości planujemy również przedstawiać najnowsze kolekcje sklepów takich jak House, Cropp Town, Diverse itp.
     .col-md-8.col-md-offset-2
-      = link_to "Strona Główna", root_path, class: 'ui btn btn-block inverted purple button big'
+      = link_to "Strona Główna", root_path, class: 'ui btn btn-block inverted button big button red'

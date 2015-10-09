@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext);
+/* @import url(https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext); */
 
 body {
        
@@ -490,14 +490,7 @@ figure {
   }
   
   img {
-/*     display: block;
-position: relative;
-width:  250px;
-height: 250px; */
-    /* background-position: 50% 50%;
-    background-repeat:   no-repeat;
-     */
-     height: 250px;
+    height: 250px;
     background-size: 100%;
     transition: transform 0.4s;
       -webkit-background-size: contain;
@@ -519,9 +512,6 @@ height: 250px; */
     transform: translateY(-75px);
     transition: transform 0.4s, opacity 0.1s;
     
-
-
-
     .title {
       position: absolute;
       top: 3;
@@ -583,4 +573,60 @@ height: 250px; */
 }
 .popup {
   color: red;
+}
+
+
+.content {
+
+  textarea {
+    margin-bottom: 15px;
+  }
+
+  .ui.header:first-child {
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+  
+  .header {
+    margin-bottom: 30px;
+  }
+}
+h4.ui.horizontal {
+    margin-bottom: 58px;
+  .icon {
+    color: white !important;
+  } 
+}
+
+
+
+i.icon.bar.chart::before {
+  color: white !important;
+}
+
+.red {
+  color: darken($pink_maincolor, 20%);
+  box-shadow: 0px 0px 0px 2px $pink_maincolor inset !important;
+  &:hover,&:focus,&:active {
+    background-color: $pink_maincolor;
+    color: white;
+  }
+}
+body > div.ui.dimmer.modals.page.transition.visible.active > div > div.content > form > div.two.fluid.ui.inverted.buttons > input {
+  margin-top: 30px;
+  color: darken($pink_maincolor, 20%);
+  box-shadow: 0px 0px 0px 2px $pink_maincolor inset !important;
+  &:hover,&:focus,&:active {
+    background-color: $pink_maincolor;
+    color: white;
+  } 
+}
+
+body > div.about_wrapper > div.info_panel > div.col-md-8.col-md-offset-2 > a {
+  color: darken($pink_maincolor, 20%);
+  box-shadow: 0px 0px 0px 2px $pink_maincolor inset !important;
+  &:hover,&:focus,&:active {
+    background-color: $pink_maincolor;
+    color: white;
+  } 
 }

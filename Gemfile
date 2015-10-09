@@ -25,6 +25,7 @@ gem 'pg'
 gem 'gon'
 gem 'analytics-ruby', :require => "segment"
 gem 'annotate'
+gem "airbrussh", :require => false
 
 group :development, :test do
   gem 'byebug'
