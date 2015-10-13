@@ -579,7 +579,7 @@ figure {
 .content {
 
   textarea {
-    margin-bottom: 15px;
+    margin-bottom: 55px;
   }
 
   .ui.header:first-child {
@@ -594,14 +594,8 @@ figure {
 h4.ui.horizontal {
     margin-bottom: 58px;
   .icon {
-    color: white !important;
+    color: $dark_gray !important;
   } 
-}
-
-
-
-i.icon.bar.chart::before {
-  color: white !important;
 }
 
 .red {
@@ -631,10 +625,59 @@ body > div.about_wrapper > div.info_panel > div.col-md-8.col-md-offset-2 > a {
   } 
 }
 
-
+/* MODAL NEWSLETTER */
 html body div.sites_component div.front_site.pushable div.pusher div.ui.dimmer.modals.page.transition.visible.active div.ui.small.modal.transition.visible.active {
-  top: 100px;
+  top: 1em;
   margin-top: auto;
   margin-bottom: auto;
+  min-height: 400px;
   height: 50%;
+}
+/* MOdal navbar button input */
+html body div.sites_component div.front_site.pushable div.pusher div.ui.dimmer.modals.page.transition.visible.active div.ui.small.modal.transition.visible.active div.content form.ui.form div.two.fluid.ui.inverted.button {
+  padding-right: 0; 
+  padding-left: 0;
+}
+
+body > div.sites_component > div > div.pusher > div.ui.dimmer.modals.page.transition.visible.active > div > div.content > form > h4 {
+  margin-top: 35px;
+  margin-bottom: 30px;
+}
+
+/* NEWSLETTER EMAIL AND TOPIC */
+
+body > div.sites_component > div > div.pusher > div.ui.dimmer.modals.page.transition.visible.active > div > div.content > form > div.two.fields {
+  margin-top: 17px;
+}
+
+.header {
+  i.close.icon {
+    font-size: 13px;
+  }
+}
+
+.modal {
+  .checkbox {
+    input {
+      margin: 0;
+    }
+    label {
+      cursor: pointer;
+    }
+  }
+
+  .content {
+    position: relative;
+    .message {
+      text-align: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-top: 4px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      width: 100%;
+      border-radius: 0;
+    }
+  }
 }
