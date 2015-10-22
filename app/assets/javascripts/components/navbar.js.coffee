@@ -1,4 +1,6 @@
 @Navbar = React.createClass
+  getInitialState: ->
+    visibleMsg: false
   componentDidMount: ->
     $('.item')
       .popup({
@@ -10,6 +12,13 @@
     $('#knefel').click (e) ->
       e.stopPropagation()
       $('.ui.sidebar').sidebar('toggle')
+    self = this
+    $(window).on 'thanks', (e) ->
+      text = $('#showmsg')
+      text.fadeIn("slow")
+      setTimeout ->
+          $('#showmsg').fadeOut("slow")
+      , 2500
   showModal: ->
     $(window).trigger('modal.visible')
   render: ->
@@ -29,13 +38,17 @@
           <i className="info icon"></i>
         </a>
       </div>
-
     sidebar = 
       <div className="item" id='knefel' data-content="Ustawienia">
         <i className="sidebar icon"></i>
       </div>
+    thanksmsg = 
+      <div className="ui floating message purple" id='showmsg'>
+        <p className="text-center">Twoja wiadomość została wysłana</p>
+      </div>
     <div className="ui large menu" id="main_navbar">
       <img className="logo" src="assets/tasiemka2.png" alt="test" />
+      {thanksmsg}
       <div className="right menu">
         {newsletter}
         {about}

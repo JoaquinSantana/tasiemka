@@ -3,6 +3,8 @@
     visible: false
     isSubscribe: false
     email: ''
+    msg: ''
+    validtext: false
   componentDidMount: ->
     self = this
     $(window).on 'modal.visible', (e) ->
@@ -12,21 +14,34 @@
       self.setState(self.getInitialState())
   handleSubmit: (e) ->
     e.preventDefault()
-    data = 
-      email: React.findDOMNode(@refs.email).value
-      topic: React.findDOMNode(@refs.topic).value
-      wiadomosc: React.findDOMNode(@refs.wiadomosc).value
-      isSubscribe: @state.isSubscribe
+    if @state.msg.length < 10
+      @setState validtext: true
+    else
+      data = 
+        email: React.findDOMNode(@refs.email).value
+        topic: React.findDOMNode(@refs.topic).value
+        wiadomosc: React.findDOMNode(@refs.wiadomosc).value
+        subscribe: @state.isSubscribe
 
-    $.post 'contact', { data: data }, (data) =>
-      @setState @getInitialState()
-    , 'JSON'
+      $.post 'contacts', { contact: data }, (data) =>
+        @showMessage()
+        @setState @hideModal
+      , 'JSON'
+  handleTextChange: (e) ->
+    @setState msg: e.target.value
+    if @state.msg.length < 10
+      @setState validtext: true
+    else
+      @setState validtext: false
   validEmail: (email) ->
     re = /\S+@\S+\.\S+/
     if re.test(email) == false
       return false
     else
       return true
+  showMessage: ->
+    console.log("show msg")
+    $(window).trigger('thanks')
   hideModal: (e) ->
     $(window).trigger('modal.hidden')
   handleSubscribe: (e) ->
@@ -40,18 +55,23 @@
       modal_classes = 'ui small modal transition hidden'
     if @state.isSubscribe and !@validEmail(@state.email)
       brakEmail =
-        <div className="ui floating message purple">
+        <div className="ui floating message purple invalid">
           <p>Podaj poprawny adres email!</p>
         </div>
       disabeButton = 'disabled'
+    if @state.validtext
+      brakWiadomosci = 
+        <div className="ui floating message purple invalid">
+          <p>Napisz do nas parę słów!</p>
+        </div>
     <div className={modal_classes}>
       <div className="ui center aligned header">
         Prześlij do nas swoje uwagi
         <i className="close icon" onClick={@hideModal}></i>
       </div>
       <div className="content">
-        {brakEmail}
         <form className="ui form" onSubmit={@handleSubmit} remote=true>
+          {brakEmail}
           <div className="two fields">
             <div className="field">
               <input name="email" 
@@ -71,8 +91,9 @@
               </select>
             </div>
           </div>
+          {brakWiadomosci}
           <div className="field">
-            <textarea rows="3" name="wiadomosc" title="Napisz do nas parę słów" ref="wiadomosc"></textarea>
+            <textarea value={@state.msg} onChange={@handleTextChange} rows="3" name="wiadomosc" title="Napisz do nas parę słów" ref="wiadomosc"></textarea>
           </div>
 
           <div className="inline field">
