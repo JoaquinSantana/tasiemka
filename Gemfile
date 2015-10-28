@@ -26,6 +26,7 @@ gem 'gon'
 gem 'analytics-ruby', :require => "segment"
 gem 'annotate'
 gem "airbrussh", :require => false
+gem 'gibbon'
 
 group :development, :test do
   gem 'web-console', '~> 2.0'
