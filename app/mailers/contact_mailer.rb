@@ -9,7 +9,7 @@ class ContactMailer < ActionMailer::Base
     elsif !@contact.subscribe? && !@contact.email.blank?
       @email = @contact.email
     else
-      @email = "Anonim"
+      @email = "Anonim@something.com"
     end
 
     mail(from: @email, subject: "#{contact.wiadomosc}")
