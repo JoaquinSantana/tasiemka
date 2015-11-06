@@ -13,7 +13,7 @@ tvn24 = Site.where(name: 'TVN24').first_or_create do |site|
 end
 categories = %w{Polska Świat Pogoda Kultura_i_styl Ciekawostki Sport}
 colors = %w{red yellow olive green teal blue violet purple pink}
-categories.each_with_index {|category, index| Category.create name: category, color: colors[index], site: tvn24 }
+categories.each_with_index {|category, index| Category.create name: category, color: colors[index], site: tvn24 unless tvn.categories.include? category }
 
 Site.create name: 'Pudelek', site_color: '#F6B1CF', favurl: 'http://www.pudelek.pl/favicon.ico', have_image: true unless Site.find_by(name: 'Pudelek')
 
@@ -22,3 +22,4 @@ Site.create name: 'Kozaczek', site_color: '#9B164D', favurl: 'http://www.kozacze
 Site.create name: 'GwiazdyWP', site_color: '#43095D', favurl: 'http://www.wp.pl/favicon.ico', have_image: true unless Site.find_by(name: 'GwiazdyWP')
 
 Site.create name: 'Stylowi', site_color: '#E6343E', favurl: 'http://stylowi.pl/favicon.ico', have_image: true unless Site.find_by(name: 'Stylowi')
+Site.create name: 'Michał Sikorski', site_color: '#E6343E', favurl: 'https://www.youtube.com/favicon.ico', have_image: true unless Site.find_by(name: 'Michał Sikorski')

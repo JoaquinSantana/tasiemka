@@ -11,6 +11,8 @@
 #  visits_count :integer          default(0)
 #  have_image   :boolean
 #  only_image   :boolean          default(FALSE)
+#  ytid         :integer
+#  description  :text
 #
 
 require "rails_helper"

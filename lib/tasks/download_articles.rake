@@ -4,8 +4,39 @@ task :download_articles => :environment do
   require 'open-uri'
   require 'nokogiri'
   require 'iconv'
+  require 'yt'
+
+  Yt.configure do |config|
+    config.api_key = 'AIzaSyAduz-sG_N0GPRtqOrsJZa6Ft1LvcO5Yro'
+    config.log_level = :debug
+  end
+
+  #Michał Sikorski YouTube channel 
+  ytids = []
+  channel = Yt::Channel.new(url: 'https://www.youtube.com/channel/UCCcmjqMEF_JvwKqr5JjMZgQ')
+  channel_videos = channel.videos.each do |video|
+    ytids << video.id
+  end
+  
+  ms = Site.find_by(name: 'Michał Sikorski')
+  ms.ytid = channel.id if ms.ytid.blank?
+  ms.description = channel.description if ms.description.blank?
+
+  tasiemka_videos_ids = ms.articles.pluck(:id)
+  new_videos = ytids - tasiemka_videos_ids
+  new_videos.each do |video_id|
+    ytvideo = Yt::Video.new id: video_id
+    ms.articles.create(
+      ytid: video_id, 
+      title: ytvideo.title, 
+      description: ytvideo.description, 
+      thumbnail_url: ytvideo.thumbnail_url,
+      dodano: ytvideo.published_at
+    )
+  end
   
   #PUDELEK
+=begin
 
   pudelek = Site.find_by(name: 'Pudelek')
   name_site = "http://" + pudelek.name.downcase + ".pl"
@@ -148,4 +179,8 @@ task :download_articles => :environment do
       p stylowi + '   Created ' + link + desc  + Time.now.to_s
     end
   end
+
+
+=end
+
 end

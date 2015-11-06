@@ -2,19 +2,22 @@
 #
 # Table name: articles
 #
-#  id           :integer          not null, primary key
-#  title        :text
-#  site_id      :integer
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
-#  article_url  :text
-#  dodano       :datetime
-#  visits_count :integer          default(0)
-#  image        :text
-#  kolekcja     :string
-#  lajk         :string
-#  have_image   :boolean
-#  category_id  :integer
+#  id            :integer          not null, primary key
+#  title         :text
+#  site_id       :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  article_url   :text
+#  dodano        :datetime
+#  visits_count  :integer          default(0)
+#  image         :text
+#  kolekcja      :string
+#  lajk          :string
+#  have_image    :boolean
+#  category_id   :integer
+#  ytid          :integer
+#  thumbnail_url :text
+#  description   :text
 #
 
 class Article < ActiveRecord::Base

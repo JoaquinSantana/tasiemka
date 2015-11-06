@@ -27,6 +27,8 @@ gem 'analytics-ruby', :require => "segment"
 gem 'annotate'
 gem "airbrussh", :require => false
 gem 'gibbon'
+gem 'yt'
+
 
 group :development, :test do
   gem 'web-console', '~> 2.0'
@@ -41,5 +43,5 @@ group :development do
   gem 'capistrano-rails', '~> 1.1.3'
   gem 'capistrano-rbenv', '~> 2.0.3'
   gem 'capistrano-passenger'
-  gem 'pry-rails'
+  #gem 'pry-rails'
 end

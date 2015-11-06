@@ -78,6 +78,7 @@
   showSidebar: ->
     $('.ui.sidebar').sidebar('toggle')
   render: ->
+    console.log(@state.site)
     <div className='site', id={@state.site.id}>
       <div className='col-sm-8 col-md-8 text-center sites site_wrapper galery_site'>
         <GalerySiteForm key={@state.site.id} options={@allSite()} siteName={@state.site.name} handleChangeCategorySite={@changeCategory} handleChangeSite={@changeSite} site={@state.site}/>

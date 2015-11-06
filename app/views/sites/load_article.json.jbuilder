@@ -1,11 +1,11 @@
 json.(@site, :id, :name, :favurl, :site_color)
 if @articles
   json.articles @articles.limit(20) do |article|
-    json.extract! article, :id, :title, :article_url, :image, :kolekcja, :lajk, :site_id, :category
+    json.extract! article, :id, :title, :article_url, :image, :kolekcja, :lajk, :site_id, :category, :thumbnail_url
   end
 else
   json.articles @site.articles.limit(20) do |article|
-    json.extract! article, :id, :title, :article_url, :image, :kolekcja, :lajk, :site_id, :category
+    json.extract! article, :id, :title, :article_url, :image, :kolekcja, :lajk, :site_id, :category, :thumbnail_url
   end
 end
 json.categories @site.categories do |category|

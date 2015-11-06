@@ -35,21 +35,27 @@
           article_url = 'http://gwiazdy.wp.pl' + @props.article.article_url
         when "Stylowi"
           article_url = 'http://stylowi.pl' + @props.article.article_url
-      <a href={article_url} target="_blank" onClick={@handleViewCount}>
-        <figure>
-          <img src={image} className="galeryimage" alt="img25"/>
-          <figcaption style={{"borderColor": site_color}}>
-            <div className="title">{title}</div>
-            <div className="icons">
-              {
-                if @props.article.lajk
-                  <i className="empty heart icon">{@props.article.lajk}</i>  
-              }
-              {
-                if @props.article.kolekcja
-                  <i className="empty star icon">{@props.article.kolekcja}</i>
-              }
-            </div>
-          </figcaption> 
-        </figure>
-      </a>
+        when "Michał Sikorski"
+          article_url = @props.article.thumb
+      if @props.site.name == "Michał Sikorski"
+        video_link = "http://www.youtube.com/embed/" + @props.article.thumbnail_url
+        <iframe width="560" height="349" src={video_link}></iframe>
+      else
+        <a href={article_url} target="_blank" onClick={@handleViewCount}>
+          <figure>
+            <img src={image} className="galeryimage" alt="img25"/>
+            <figcaption style={{"borderColor": site_color}}>
+              <div className="title">{title}</div>
+              <div className="icons">
+                {
+                  if @props.article.lajk
+                    <i className="empty heart icon">{@props.article.lajk}</i>  
+                }
+                {
+                  if @props.article.kolekcja
+                    <i className="empty star icon">{@props.article.kolekcja}</i>
+                }
+              </div>
+            </figcaption> 
+          </figure>
+        </a>
