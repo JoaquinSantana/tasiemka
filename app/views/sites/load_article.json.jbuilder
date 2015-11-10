@@ -1,4 +1,4 @@
-json.(@site, :id, :name, :favurl, :site_color)
+json.(@site, :id, :name, :favurl, :site_color, :ytchannel)
 if @articles
   json.articles @articles.limit(20) do |article|
     json.extract! article, :id, :title, :article_url, :image, :kolekcja, :lajk, :site_id, :category, :thumbnail_url

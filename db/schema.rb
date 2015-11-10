@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151106111322) do
+ActiveRecord::Schema.define(version: 20151110112203) do
 
   create_table "articles", force: :cascade do |t|
     t.text     "title"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20151106111322) do
     t.string   "lajk"
     t.boolean  "have_image"
     t.integer  "category_id"
-    t.integer  "ytid"
+    t.string   "ytid"
     t.text     "thumbnail_url"
     t.text     "description"
   end
@@ -61,8 +61,9 @@ ActiveRecord::Schema.define(version: 20151106111322) do
     t.integer  "visits_count", default: 0
     t.boolean  "have_image"
     t.boolean  "only_image",   default: false
-    t.integer  "ytid"
+    t.string   "ytid"
     t.text     "description"
+    t.boolean  "ytchannel",    default: false
   end
 
   add_index "sites", ["name"], name: "index_sites_on_name"

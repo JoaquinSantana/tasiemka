@@ -10,8 +10,13 @@
         return false
       error:(data) ->
         return false
+  componentDidMount: ->
+    $('.heh .ui.embed').embed();
   render: ->
     site_color = @props.site.site_color
+    switch @props.site.name 
+      when "Michał Sikorski"
+        image = @props.article.thumbnail_url
     if @props.article.image
       image = @props.article.image
     if @props.article.title
@@ -36,11 +41,20 @@
         when "Stylowi"
           article_url = 'http://stylowi.pl' + @props.article.article_url
         when "Michał Sikorski"
-          article_url = @props.article.thumb
-      if @props.site.name == "Michał Sikorski"
-        video_link = "http://www.youtube.com/embed/" + @props.article.thumbnail_url
-        <iframe width="560" height="349" src={video_link}></iframe>
-      else
+          article_url = @props.article.thumbnail_url
+    switch @props.site.ytchannel
+      when true
+        console.log("YT CHANNEL LOADED")
+        console.log("artikle url to:" + @props.article.thumbnail_url)
+        <div className="hehe">
+          <a href={@props.article.thumbnail_url}>
+            {console.log(@props.article.thumbnail_url)}
+            <div className="ui embed" data-source="youtube" data-id={@props.article.ytid} data-icon="right circle arrow" data-placeholder={@props.article.thumbnail_url}>
+            </div>
+          </a>
+        </div>
+      when false
+        console.log("Other Content loaded")
         <a href={article_url} target="_blank" onClick={@handleViewCount}>
           <figure>
             <img src={image} className="galeryimage" alt="img25"/>
@@ -59,3 +73,4 @@
             </figcaption> 
           </figure>
         </a>
+        

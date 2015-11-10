@@ -1,5 +1,5 @@
 json.sites @sites do |site|
-  json.extract! site, :id, :name, :favurl, :site_color
+  json.extract! site, :id, :name, :favurl, :site_color, :ytchannel
 
   json.articles site.articles.last(120).sample(20) do |article|
     json.extract! article, :id, :title, :article_url, :image, :kolekcja, :lajk, :site_id, :category, :thumbnail_url

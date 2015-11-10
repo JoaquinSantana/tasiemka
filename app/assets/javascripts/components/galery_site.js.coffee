@@ -96,7 +96,7 @@
                   style = {
                     "boxShadow": "0px 0px 5px #{article.category.color}"
                   }
-                <div className="col-md-3" key={index} >
+                <div className="col-md-3 col-sm-3" key={index} >
                   <GaleryArticle key={index} position={@position(article)} article={article} site={@state.site} />
                 </div>
             }

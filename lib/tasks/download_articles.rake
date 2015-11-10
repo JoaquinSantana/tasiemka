@@ -19,18 +19,26 @@ task :download_articles => :environment do
   end
   
   ms = Site.find_by(name: 'Michał Sikorski')
-  ms.ytid = channel.id if ms.ytid.blank?
-  ms.description = channel.description if ms.description.blank?
+  p ms
+  if ms.ytid.blank?
+    ms.ytid = channel.id 
+    ms.save!
+  end
+  if ms.description.blank?
+    ms.description = channel.description 
+    ms.save!
+  end
 
   tasiemka_videos_ids = ms.articles.pluck(:id)
   new_videos = ytids - tasiemka_videos_ids
   new_videos.each do |video_id|
     ytvideo = Yt::Video.new id: video_id
+    p ytvideo.id
     ms.articles.create(
-      ytid: video_id, 
+      ytid: ytvideo.id, 
       title: ytvideo.title, 
       description: ytvideo.description, 
-      thumbnail_url: ytvideo.thumbnail_url,
+      thumbnail_url: ytvideo.thumbnail_url(:high),
       dodano: ytvideo.published_at
     )
   end
