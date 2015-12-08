@@ -1,7 +1,7 @@
-class SitesController < ApplicationController
+class CategoriesController < ApplicationController
   
   def index
-    @sites = Site.all.order(:id).limit(3)
+    @categories = Site.all.order(:id).limit(3)
     @videosite = Site.all.order(:id).where(ytchannel: true).first
     @sitesname = Site.all.order(:id)
   end

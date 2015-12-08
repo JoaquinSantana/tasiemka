@@ -11,37 +11,44 @@ task :download_articles => :environment do
     config.log_level = :debug
   end
 
-  #Michał Sikorski YouTube channel 
-  ytids = []
-  channel = Yt::Channel.new(url: 'https://www.youtube.com/channel/UCCcmjqMEF_JvwKqr5JjMZgQ')
-  channel_videos = channel.videos.each do |video|
-    ytids << video.id
+  #YouTube channels 
+  #ytchannels_ids = ['UCCcmjqMEF_JvwKqr5JjMZgQ', 'UCTISYi9ABujrrI1Slg3ZDBA']
+  ytchannels_ids = Site.all.pluck(:ytid).compact!
+  ytchannels_ids.each do |ytchannel_id|
+    p "Pobieram dane ze strony" + ytchannel_id
+    ytids = []
+    channel = Yt::Channel.new(url: 'https://www.youtube.com/channel/' + ytchannel_id)
+    channel_videos = channel.videos.each do |video|
+      ytids << video.id
+    end
+  
+    tasiemka_site = Site.find_by(ytid: ytchannel_id)
+    if tasiemka_site.description.blank?
+      tasiemka_site.description = channel.description 
+      tasiemka_site.save!
+    end
+
+    tasiemka_videos_ids = tasiemka_site.articles.pluck(:ytid)
+    new_videos = ytids - tasiemka_videos_ids
+    new_videos.each do |video_id|
+      ytvideo = Yt::Video.new id: video_id
+      p ytvideo.category_title
+      p ytvideo.like_count
+      p ytvideo.view_count
+      p ytvideo.id
+      tasiemka_site.articles.create(
+        ytid: ytvideo.id, 
+        title: ytvideo.title, 
+        description: ytvideo.description, 
+        thumbnail_url: ytvideo.thumbnail_url(:high),
+        dodano: ytvideo.published_at,
+        like: ytvideo.like_count,
+        view: ytvideo.view_count,
+        category_title: ytvideo.category_title
+      )
+    end
   end
   
-  ms = Site.find_by(name: 'Michał Sikorski')
-  p ms
-  if ms.ytid.blank?
-    ms.ytid = channel.id 
-    ms.save!
-  end
-  if ms.description.blank?
-    ms.description = channel.description 
-    ms.save!
-  end
-
-  tasiemka_videos_ids = ms.articles.pluck(:id)
-  new_videos = ytids - tasiemka_videos_ids
-  new_videos.each do |video_id|
-    ytvideo = Yt::Video.new id: video_id
-    p ytvideo.id
-    ms.articles.create(
-      ytid: ytvideo.id, 
-      title: ytvideo.title, 
-      description: ytvideo.description, 
-      thumbnail_url: ytvideo.thumbnail_url(:high),
-      dodano: ytvideo.published_at
-    )
-  end
   
   #PUDELEK
 =begin

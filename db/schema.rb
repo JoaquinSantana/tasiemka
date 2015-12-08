@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151110112203) do
+ActiveRecord::Schema.define(version: 20151207130130) do
 
   create_table "articles", force: :cascade do |t|
     t.text     "title"
     t.integer  "site_id"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.text     "article_url"
     t.datetime "dodano"
-    t.integer  "visits_count",  default: 0
+    t.integer  "visits_count",   default: 0
     t.text     "image"
     t.string   "kolekcja"
     t.string   "lajk"
@@ -29,6 +29,9 @@ ActiveRecord::Schema.define(version: 20151110112203) do
     t.string   "ytid"
     t.text     "thumbnail_url"
     t.text     "description"
+    t.integer  "view"
+    t.integer  "like"
+    t.string   "category_title"
   end
 
   add_index "articles", ["article_url"], name: "index_articles_on_article_url"

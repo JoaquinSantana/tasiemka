@@ -21,7 +21,7 @@
 #
 
 class Article < ActiveRecord::Base
-  default_scope { order("created_at DESC") }
+  default_scope { order("dodano DESC") }
   belongs_to :site
   belongs_to :category
 

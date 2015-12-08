@@ -9,6 +9,6 @@ $(document).on "page:change", ->
       $(this).removeClass 'animated flash'
       return
     ).addClass 'animated flash'
-
+  #$('.ui.embed').embed();
   ###$('.ui.dropdown').dropdown();###
   

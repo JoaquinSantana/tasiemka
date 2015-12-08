@@ -491,6 +491,7 @@ figure {
   
   img {
     height: 250px;
+    margin-top: -33px;
     background-size: 100%;
     transition: transform 0.4s;
       -webkit-background-size: contain;
@@ -507,9 +508,9 @@ figure {
     position: relative;
     font-size: 14px;
     width: 100%;
-    height: 75px;
+    height: 50px;
     opacity: 1;
-    transform: translateY(-75px);
+    transform: translateY(-50px);
     transition: transform 0.4s, opacity 0.1s;
     
     .title {

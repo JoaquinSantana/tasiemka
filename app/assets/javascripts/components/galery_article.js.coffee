@@ -10,8 +10,8 @@
         return false
       error:(data) ->
         return false
-  componentDidMount: ->
-    $('.heh .ui.embed').embed();
+  showModal: ->
+    $(window).trigger('modal.visible', @props.article)
   render: ->
     site_color = @props.site.site_color
     switch @props.site.name 
@@ -44,17 +44,27 @@
           article_url = @props.article.thumbnail_url
     switch @props.site.ytchannel
       when true
-        console.log("YT CHANNEL LOADED")
-        console.log("artikle url to:" + @props.article.thumbnail_url)
         <div className="hehe">
-          <a href={@props.article.thumbnail_url}>
-            {console.log(@props.article.thumbnail_url)}
-            <div className="ui embed" data-source="youtube" data-id={@props.article.ytid} data-icon="right circle arrow" data-placeholder={@props.article.thumbnail_url}>
-            </div>
-          </a>
+          <div onClick={@showModal}>
+            <figure>
+              <img src={@props.article.thumbnail_url} className="galeryimage" alt="img25"/>
+              <figcaption style={{"borderColor": site_color}}>
+                <div className="title">{title}</div>
+                <div className="icons">
+                  {
+                    if @props.article.lajk
+                      <i className="empty heart icon">{@props.article.lajk}</i>  
+                  }
+                  {
+                    if @props.article.kolekcja
+                      <i className="empty star icon">{@props.article.kolekcja}</i>
+                  }
+                </div>
+              </figcaption> 
+            </figure>
+          </div>
         </div>
       when false
-        console.log("Other Content loaded")
         <a href={article_url} target="_blank" onClick={@handleViewCount}>
           <figure>
             <img src={image} className="galeryimage" alt="img25"/>

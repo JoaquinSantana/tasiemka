@@ -1,6 +1,7 @@
 @Sites = React.createClass
   getInitialState: ->
     sites: @props.sites
+    videosite: @props.videosite
     all_site: @props.all_site
     styles: { "layout": "2-kol" }
   componentDidMount: ->
@@ -22,6 +23,8 @@
   showModal: ->
     $(window).trigger('modal.visible')
   render: ->
+    console.log("VIDEOSITE")
+    console.log(@props.videosite)
     active2 = <Active /> if @state.styles.layout == '2-kol'
     active3 = <Active /> if @state.styles.layout == '3-kol'
       
@@ -61,6 +64,7 @@
             if @state.styles.layout == '2-kol'
               first_site = @state.sites[0]
               galery_site = @state.sites[2]
+              console.log("STATE SITES")
               console.log(@state.sites)
               <div key={first_site.id} className="LOLOLO">
                 <Site id={first_site.id} site={first_site} articles={first_site.articles} all_site={@props.all_site} />   
