@@ -11,8 +11,9 @@
 #  visits_count :integer          default(0)
 #  have_image   :boolean
 #  only_image   :boolean          default(FALSE)
-#  ytid         :integer
+#  ytid         :string
 #  description  :text
+#  ytchannel    :boolean          default(FALSE)
 #
 
 require "rails_helper"

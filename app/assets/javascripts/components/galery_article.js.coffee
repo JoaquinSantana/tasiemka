@@ -19,20 +19,26 @@
     if @props.article.title
       title = @props.article.title
     <div className="hehe">
-      <div onClick={@showModal}>
+      <div>
         <figure>
-          <img src={@props.article.thumbnail_url} className="galeryimage" alt="img25"/>
+          <img src={@props.article.thumbnail_url} onClick={@showModal} className="galeryimage" alt="img25"/>
           <figcaption style={{"borderColor": 'red'}}>
             <div className="title">{title}</div>
             <div className="icons">
-              {
-                if @props.article.lajk
-                  <i className="empty heart icon">{@props.article.lajk}</i>  
-              }
-              {
-                if @props.article.kolekcja
-                  <i className="empty star icon">{@props.article.kolekcja}</i>
-              }
+              <div className="row">
+                {
+                  if @props.article.like
+                    <div className="col-md-6">
+                      <i className="empty heart icon">{@props.article.like}</i>  
+                    </div>
+                }
+                {
+                  if @props.article.view
+                    <div className="col-md-6">
+                      <i className="empty star icon">{@props.article.view}</i>
+                    </div>
+                }
+              </div>
             </div>
           </figcaption> 
         </figure>

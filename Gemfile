@@ -28,7 +28,7 @@ gem 'annotate'
 gem "airbrussh", :require => false
 gem 'gibbon'
 gem 'yt'
-
+gem 'underscore-rails'
 
 group :development, :test do
   gem 'web-console', '~> 2.0'

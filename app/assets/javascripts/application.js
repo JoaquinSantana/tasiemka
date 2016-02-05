@@ -16,6 +16,7 @@
 //= require bootstrap-sprockets
 //= require react
 //= require react_ujs
+//= require underscore
 //= require semantic-ui
 //= require components
 //= reqiore custom
