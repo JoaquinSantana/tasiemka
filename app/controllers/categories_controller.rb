@@ -1,22 +1,28 @@
 class CategoriesController < ApplicationController
   
   def index
-    @categories = Site.all.order(:id).limit(3)
+    @categories = Category.all.order(:id).limit(3)
+    @categoriesname = Category.all.order(:id)
     @videosite = Site.all.order(:id).where(ytchannel: true).first
     @sitesname = Site.all.order(:id)
   end
 
   def load_article
     name = params[:name].to_s
-    site = Site.find_by(name: name)
+    category = Category.find_by(name: name)
     
+=begin
+
     if params[:category]
       category = Category.find_by(name: params[:category].to_s)
       @articles = site.articles.where(category: category)
       @site = site
     else
-      @site = site
+      @category = category
     end
+=end
+    @category = category
+    @articles = category.articles
   end
 
   def view_count

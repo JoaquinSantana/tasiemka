@@ -1,10 +1,10 @@
-@GalerySiteForm = React.createClass
+@GaleryCategoryForm = React.createClass
   getInitialState: ->
     value: ""
     title: ''
     options: @props.options
-    defaultValue: @props.siteName
-    categories: @props.site.categories
+    defaultValue: @props.categoryName
+    #categories: @props.site.categories
   getDefaultState: ->
     options: []
   componentDidMount: ->
@@ -31,15 +31,14 @@
   changeCategory: (e) ->
     @props.handleChangeCategorySite(e)
   render: ->
-    site_color = @props.site.site_color
-    sitename = @props.sitename
+    category_color = @props.category.color
+    categoryname = @props.categoryname
     <div className="row">
       <div className="col-md-12">
         <div className="searchheader ui floating dropdown labeled icon button pull-left" data-content="Wybierz stronę z której chcesz zobaczyć wiadomości">
           <i className="filter icon"></i>
           <span className="text">
-            <LogoFavicon link={@props.site.favurl} />
-            {@props.site.name}
+            {@props.category.name}
           </span>
           <div className="menu">
             <div className="ui icon search input">
@@ -56,7 +55,7 @@
                 for op in @state.options
                   <div key={op} onClick={@handleChange.bind(this, op[1])} className="item">
                     <div className="field">
-                      <LogoFavicon link={op[2]} />
+                      <LogoFavicon />
                       {op[1]}
                     </div>
                   </div>                
@@ -64,6 +63,6 @@
             </div>
           </div>
         </div>
-        #<CategorySite handleChangeCategorySite={@changeCategory} categories={@state.categories}/>
       </div>
     </div>
+######<CategorySite handleChangeCategorySite={@changeCategory} categories={@state.categories}/>

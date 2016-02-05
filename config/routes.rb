@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :contacts
 
   get '/sites/:name', to: 'sites#load_article'
+  get '/categories/:name', to: 'categories#load_article'
   get '/get_articles/:id', to: 'articles#get_articles'
+  get '/get_articles_from_category/:id', to: 'articles#get_articles_from_category'
   get '/about', to: 'staticsites#about'
   patch '/view_count', to: 'sites#view_count'
   

@@ -18,4 +18,18 @@ class ArticlesController < ApplicationController
       render json: { element: 'last' }
     end
   end
+
+  def get_articles_from_category
+    category = Category.find(params[:id])
+    last_article = Article.find(params[:lastElem])
+    next_article = category.next_article(last_article)
+
+    @new_data = JSON.parse category.articles.where(id: next_article[0]..next_article[1]).to_json unless next_article.blank?
+    
+    if @new_data
+      render json: @new_data
+    else
+      render json: { element: 'last' }
+    end
+  end
 end

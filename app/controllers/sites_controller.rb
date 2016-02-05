@@ -2,6 +2,8 @@ class SitesController < ApplicationController
   
   def index
     @sites = Site.all.order(:id).limit(3)
+    @categories = Category.all.order(:id).limit(3)
+    @categoriesname = Category.all.order(:id)
     @videosite = Site.all.order(:id).where(ytchannel: true).first
     @sitesname = Site.all.order(:id)
   end

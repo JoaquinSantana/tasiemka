@@ -1,4 +1,4 @@
-@Sites = React.createClass
+@SSites = React.createClass
   getInitialState: ->
     sites: @props.sites
     categories: @props.categories
@@ -25,13 +25,13 @@
   showModal: ->
     $(window).trigger('modal.visible')
   render: ->
-    console.log("111 CATEGORIES 11111")
-    console.log(@state.categories)
+    console.log("VIDEOSITE")
+    console.log(@props.videosite)
     active2 = <Active /> if @state.styles.layout == '2-kol'
     active3 = <Active /> if @state.styles.layout == '3-kol'
       
     <div className='front_site' style={{"color": "red"}}>
-      <div className="ui sidebar sright inverted vertical menu">
+      <div className="ui sidebar right inverted vertical menu">
         <div className="row ui large menu inverted hidden_menu">
           
             <div className="col-md-12">
@@ -69,10 +69,9 @@
               galery_category = @state.categories[2]
               console.log("STATE SITES")
               console.log(@state.sites)
-              console.log("STATE CATEGORIES galery_category")
-              console.log(galery_category)
               <div key={first_site.id} className="LOLOLO">
-                <Site id={first_site.id} site={first_site} articles={first_site.articles} all_site={@props.all_site} />
+                <Site id={first_site.id} site={first_site} articles={first_site.articles} all_site={@props.all_site} />   
+                <GalerySite id={galery_site.id} site={galery_site} articles={galery_site.articles} all_site={@props.all_site} />
                 <GaleryCategory id={galery_category.id} category={galery_category} articles={galery_category.articles} all_categories={@props.all_categories} />
               </div>
 

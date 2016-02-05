@@ -31,7 +31,7 @@ class Site < ActiveRecord::Base
     if next_element.nil?
       return
     end
-    end_range = articles_ids[articles_ids.index(next_element) + 10]
+    end_range = articles_ids[articles_ids.index(next_element) + 60]
     if end_range.nil?
       end_range = articles_ids.last
     end
