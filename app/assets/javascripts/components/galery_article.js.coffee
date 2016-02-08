@@ -28,14 +28,14 @@
               <div className="row">
                 {
                   if @props.article.like
-                    <div className="col-md-6">
-                      <i className="empty heart icon">{@props.article.like}</i>  
+                    <div className="col-md-6 pull-left">
+                      <i className="empty heart icon"></i> {@props.article.like}
                     </div>
                 }
                 {
                   if @props.article.view
-                    <div className="col-md-6">
-                      <i className="empty star icon">{@props.article.view}</i>
+                    <div className="col-md-6 pull-right">
+                      <i className="empty star icon"></i> {@props.article.view}
                     </div>
                 }
               </div>

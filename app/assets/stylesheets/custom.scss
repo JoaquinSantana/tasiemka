@@ -529,17 +529,23 @@ figure {
     }
 
     .icons {
+      background: rgb(184, 184, 184);
       position: absolute;
+      padding-top: 1px;
       height: 20px;
       bottom: 3px;
       top: 55px;
       color: black;
+      width: 100%;
 
       .icon {
         padding-left: 5px;
       }
       .star {
-        padding-left: 20px;
+        color: yellow;
+      }
+      .heart{
+        color: red;
       }
     }
 

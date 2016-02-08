@@ -87,14 +87,11 @@
     bName = b.like 
     ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0))
   handleSortbyLike: ->
-    console.log("Sort by click")
-    sortedArticles = @state.articles.sort (a, b) -> 
-      return parseFloat(a.like) + parseFloat(b.like)  
-    console.log(sortedArticles)
-    sortedArticless = _.sortBy @state.articles (obj) -> 
-        return +obj.view
-    console.log(sortedArticless)
-    @setState articles: sortedArticless
+    sortedArticles = _.sortBy(@state.articles, 'like').reverse()
+    @setState articles: sortedArticles
+  handleSortbyView: ->
+    sortedArticles = _.sortBy(@state.articles, 'view').reverse()
+    @setState articles: sortedArticles
   render: ->
     <div className='site', id={@state.category.id}>
       <div className='col-sm-8 col-md-8 text-center sites site_wrapper galery_site'>
@@ -104,7 +101,7 @@
           </div>
           <div className="col-md-4">
             <button onClick={@handleSortbyLike} className="ui inverted button red">Sort by: like</button>
-            <button className="ui inverted button green">Sort by: views</button>
+            <button onClick={@handleSortbyView} className="ui inverted button green">Sort by: views</button>
           </div>
         </div>
         <div className='articles' ref='articlesref'>
