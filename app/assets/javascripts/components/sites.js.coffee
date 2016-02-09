@@ -25,13 +25,12 @@
   showModal: ->
     $(window).trigger('modal.visible')
   render: ->
-    console.log("111 CATEGORIES 11111")
-    console.log(@state.categories)
+    active1 = <Active /> if @state.styles.layout == '1-kol'
     active2 = <Active /> if @state.styles.layout == '2-kol'
     active3 = <Active /> if @state.styles.layout == '3-kol'
       
     <div className='front_site' style={{"color": "red"}}>
-      <div className="ui sidebar sright inverted vertical menu">
+      <div className="ui sidebar right inverted vertical menu">
         <div className="row ui large menu inverted hidden_menu">
           
             <div className="col-md-12">
@@ -42,6 +41,10 @@
                 </div>
               </div>
               <div className="layoutlist list-unstyled">
+                <li className="text-center" onClick={@changeLayout.bind(this, '1-kol')}>
+                  <h3>Jedna kolumna</h3>
+                  <i className="fa fa-align-justify">{active1}</i>
+                </li>
                 <li className="text-center" onClick={@changeLayout.bind(this, '2-kol')}>
                   <h3>Dwie kolumny</h3>
                   <i className="fa fa-th-list">{active2}</i>
@@ -63,22 +66,19 @@
         <NewsletterPage />
         <div className="sites_wrapper">
           { 
-            if @state.styles.layout == '2-kol'
+            if @state.styles.layout == '1-kol'
+              <GaleryCategory id={@state.categories[2].id} layout={@state.styles.layout} category={@state.categories[2]} articles={@state.categories[2].articles} all_categories={@props.all_categories} />
+            else if @state.styles.layout == '2-kol'
               first_site = @state.sites[0]
               galery_site = @state.sites[2]
               galery_category = @state.categories[2]
-              console.log("STATE SITES")
-              console.log(@state.sites)
-              console.log("STATE CATEGORIES galery_category")
-              console.log(galery_category)
-              <div key={first_site.id} className="LOLOLO">
+              <div key={first_site.id} className="twoColumns">
                 <Site id={first_site.id} site={first_site} articles={first_site.articles} all_site={@props.all_site} />
                 <GaleryCategory id={galery_category.id} category={galery_category} articles={galery_category.articles} all_categories={@props.all_categories} />
               </div>
-
             else if @state.styles.layout == '3-kol'
               for site in @state.sites     
-                <div key={site.id} className="LOLOLO">
+                <div key={site.id} className="threColumns">
                   <Site id={site.id} site={site} articles={site.articles} all_site={@props.all_site} />
                 </div>
 

@@ -6,7 +6,7 @@
       .popup({
         inline   : true,
         hoverable: true,
-        position : 'bottom left',
+        position : 'bottom right',
         inverted: true
       });
     $('#knefel').click (e) ->

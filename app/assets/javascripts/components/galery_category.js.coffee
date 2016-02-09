@@ -93,15 +93,19 @@
     sortedArticles = _.sortBy(@state.articles, 'view').reverse()
     @setState articles: sortedArticles
   render: ->
+    if @props.layout && @props.layout == '1-kol'
+      klassName = 'col-sm-12 col-sm-12'
+    else
+      klassName = 'col-sm-8 col-md-8'
     <div className='site', id={@state.category.id}>
-      <div className='col-sm-8 col-md-8 text-center sites site_wrapper galery_site'>
+      <div className={klassName + ' text-center sites site_wrapper galery_site'}>
         <div className="row">
           <div className="col-md-8">
             <GaleryCategoryForm key={@state.category.id} options={@allCategories()} categoryName={@state.category.name} handleChangeCategorySite={@changeCategory} handleChangeSite={@changeSite} category={@state.category}/>
           </div>
-          <div className="col-md-4">
-            <button onClick={@handleSortbyLike} className="ui inverted button red">Sort by: like</button>
-            <button onClick={@handleSortbyView} className="ui inverted button green">Sort by: views</button>
+          <div className="col-md-4 pull-right">
+            <button onClick={@handleSortbyLike} className="ui inverted icon button red"><i className="empty heart icon"></i></button>
+            <button onClick={@handleSortbyView} className="ui inverted icon button yellow"><i className="empty star icon"></i></button>
           </div>
         </div>
         <div className='articles' ref='articlesref'>

@@ -39,6 +39,11 @@ body {
           */         
 }
 
+.galery_site {
+  .col-md-4 {
+    width: inherit;
+  }
+}
 .ui.sidebar {
   height: 100%;
   .row.ui.large {
@@ -405,7 +410,6 @@ i.sidebar {
   box-shadow: none;
   
   .item {
-    width: 80px;
     &:before {
       content: none;
     }

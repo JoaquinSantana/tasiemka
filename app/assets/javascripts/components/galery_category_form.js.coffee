@@ -38,6 +38,7 @@
         <div className="searchheader ui floating dropdown labeled icon button pull-left" data-content="Wybierz stronę z której chcesz zobaczyć wiadomości">
           <i className="filter icon"></i>
           <span className="text">
+            <LogoFavicon />
             {@props.category.name}
           </span>
           <div className="menu">
