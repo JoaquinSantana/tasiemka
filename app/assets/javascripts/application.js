@@ -19,6 +19,7 @@
 //= require underscore
 //= require semantic-ui
 //= require components
+//= require typed
 //= reqiore custom
 //= require_tree .
 

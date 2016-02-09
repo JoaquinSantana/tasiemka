@@ -2,6 +2,16 @@
   getInitialState: ->
     visibleMsg: false
   componentDidMount: ->
+    $(".better")
+      .typed({
+        strings: ["site ^1000", "side ^1000"],
+        typeSpeed: 50,
+        backDelay: 4000,
+        loop: true,
+        loopCount: false,
+        showCursor: true,
+        cursorChar: "|",
+      });
     $('.item')
       .popup({
         inline   : true,
@@ -47,7 +57,10 @@
         <p className="text-center">Twoja wiadomość została wysłana</p>
       </div>
     <div className="ui large menu" id="main_navbar">
-      <img className="logo" src="assets/tasiemka2.png" alt="test" />
+      <img className="logo" src="assets/tasiemka2.png" alt="Tasiemka" />
+        <div className="item betterMainWrapper">
+          <p className="text-center betterMain">Better <span className='better'> </span> <span className="ofInternet">of internet</span></p>
+        </div>
       {thanksmsg}
       <div className="right menu">
         {newsletter}

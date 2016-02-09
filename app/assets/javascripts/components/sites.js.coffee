@@ -67,11 +67,11 @@
         <div className="sites_wrapper">
           { 
             if @state.styles.layout == '1-kol'
-              <GaleryCategory id={@state.categories[2].id} layout={@state.styles.layout} category={@state.categories[2]} articles={@state.categories[2].articles} all_categories={@props.all_categories} />
+              <GaleryCategory id={@state.categories[1].id} layout={@state.styles.layout} category={@state.categories[1]} articles={@state.categories[1].articles} all_categories={@props.all_categories} />
             else if @state.styles.layout == '2-kol'
               first_site = @state.sites[0]
-              galery_site = @state.sites[2]
-              galery_category = @state.categories[2]
+              galery_site = @state.sites[1]
+              galery_category = @state.categories[1]
               <div key={first_site.id} className="twoColumns">
                 <Site id={first_site.id} site={first_site} articles={first_site.articles} all_site={@props.all_site} />
                 <GaleryCategory id={galery_category.id} category={galery_category} articles={galery_category.articles} all_categories={@props.all_categories} />

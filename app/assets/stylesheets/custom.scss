@@ -107,6 +107,8 @@ body {
   }
 }
 
+
+
 .logo {
   width: 160px;
   height: 80px;
@@ -703,4 +705,29 @@ body > div.sites_component > div > div.pusher > div.ui.dimmer.modals.page.transi
   margin-right:auto;
   z-index: 10;
   display: none;
+}
+.betterMainWrapper {
+  position: absolute !important;
+  top: 42px;
+  left: 18px;
+  font-size: 11px;
+}
+
+p.betterMain {
+  font-family: 'Philosopher-Regular';
+  color: $dark_gray;
+  position: relative !important;
+  
+  span.better {
+    position: absolute !important;
+  }
+  span.typed-cursor {
+    opacity: 0 !important;
+  }
+  span.ofInternet {
+    position: absolute !important;
+    top: 0;
+    left: 30px;
+    width: 100px;
+  }
 }
