@@ -64,8 +64,6 @@
       {thanksmsg}
       <div className="right menu">
         {newsletter}
-        {about}
-        {facebook_link}
         {sidebar}
       </div>
     </div>

@@ -18,29 +18,25 @@
       image = @props.article.image
     if @props.article.title
       title = @props.article.title
-    <div className="hehe">
-      <div>
-        <figure>
-          <img src={@props.article.thumbnail_url} onClick={@showModal} className="galeryimage" alt="img25"/>
-          <figcaption style={{"borderColor": 'red'}}>
-            <div className="title">{title}</div>
-            <div className="icons">
-              <div className="row">
-                {
-                  if @props.article.like
-                    <div className="col-md-6 pull-left">
-                      <i className="empty heart icon"></i> {@props.article.like}
-                    </div>
-                }
-                {
-                  if @props.article.view
-                    <div className="col-md-6 pull-right">
-                      <i className="empty star icon"></i> {@props.article.view}
-                    </div>
-                }
-              </div>
-            </div>
-          </figcaption> 
-        </figure>
-      </div>
+    <div className="">
+      <figure className="effect-duke">
+        <img src={@props.article.thumbnail_url} onClick={@showModal} alt="img25"/>
+        <figcaption>
+          <h3>
+            {
+              if @props.article.like
+                <div className="col-md-6 pull-left">
+                  <i className="empty heart icon"></i> {@props.article.like}
+                </div>
+            }
+            {
+              if @props.article.view
+                <div className="col-md-6 pull-right">
+                  <i className="empty star icon"></i> {@props.article.view}
+                </div>
+            }
+          </h3>
+          <p>{title}</p>
+        </figcaption> 
+      </figure>
     </div>
