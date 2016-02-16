@@ -21,7 +21,7 @@
     <div className="">
       <figure className="effect-duke">
         <img src={@props.article.thumbnail_url} onClick={@showModal} alt="img25"/>
-        <figcaption>
+        <figcaption onClick={@showModal}>
           <h3>
             {
               if @props.article.like
@@ -36,7 +36,15 @@
                 </div>
             }
           </h3>
-          <p>{title}</p>
+          <p>
+            {title}
+            <button className="ui inverted icon button green">
+              <i className="fa fa-thumbs-o-up"></i>
+            </button>
+            <button className="ui inverted icon button red">
+              <i className="fa fa-thumbs-o-down"></i>
+            </button>
+          </p>
         </figcaption> 
       </figure>
     </div>

@@ -579,7 +579,6 @@ figure {
   margin-left: 5px !important;
   padding-top: 7px !important;
   padding-bottom: 7px !important;
-  
 
   .header {
     span {
@@ -826,8 +825,8 @@ button.button.blue {
 }
 
 figure.effect-duke {
-  background: -webkit-linear-gradient(-45deg, #34495e 0%,#cc6055 100%);
-  background: linear-gradient(-45deg, #34495e 0%,#cc6055 100%);
+  background: -webkit-linear-gradient(-45deg, $pink_maincolor 0%,$deep_gray 100%);
+  background: linear-gradient(-45deg, $pink_maincolor 0%,$deep_gray 100%);
 }
 
 figure.effect-duke img,
@@ -867,6 +866,11 @@ figure.effect-duke h3 {
   transform: scale3d(0.8,0.8,1);
   -webkit-transform-origin: 25% 50%;
   transform-origin: 50% 100%;
+  margin-top: 12px;
+  
+  .col-md-6 {
+    padding: 0;
+  }
 }
 
 figure.effect-duke p {
@@ -891,10 +895,10 @@ figure.effect-duke:hover p {
   opacity: 1;
   -webkit-transform: scale3d(1,1,1);
   transform: scale3d(1,1,1);
-  background: red;
+  background: $deep_gray;
   min-width: 92%;
   margin-bottom: 65px;
-   top: -148px;
+   top: -199px;
 }
 figure.effect-duke:hover h3 {
   opacity: 0;
@@ -913,5 +917,24 @@ figure.effect-duke:hover h3 {
     float: none;
     margin: 10px auto;
     width: 100%;
+  }
+}
+
+
+.link {
+  cursor: pointer;
+}
+
+figcaption {
+  .green {
+    position: absolute;
+    top: 150px;
+    left: 40px;
+  }
+
+  .red {
+    position: absolute;
+    top: 150px;
+    left: 160px;
   }
 }

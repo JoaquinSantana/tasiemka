@@ -4,11 +4,11 @@ json.sites @sites do |site|
   json.extract! site, :id, :name, :favurl, :site_color, :ytchannel
 
   json.articles site.articles.last(60) do |article|
-    json.extract! article, :article_id, :title, :article_url, :image, :kolekcja, :lajk, :site_id, :category, :thumbnail_url, :ytid
+    json.extract! article, :id, :title, :article_url, :image, :kolekcja, :lajk, :site_id, :category, :thumbnail_url, :ytid
   end
 
   json.categories site.categories do |category|
-    json.extract! category, :category_id, :name, :color, :site_id
+    json.extract! category, :id, :name, :color, :site_id
   end
 end
 

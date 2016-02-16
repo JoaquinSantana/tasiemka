@@ -11,9 +11,42 @@ task :download_articles => :environment do
     config.log_level = :debug
   end
 
+
+###########################################################
+
+ytsite = Nokogiri::HTML(open("http://wypokowyyt.top/"))
+ytchannels = []
+
+ytsite.css('a').each do |ytlink|
+  ytchannels << ytlink.attributes["href"].value
+end
+#Site.create name: 'Michał Sikorski', 
+#ytchannel: true, 
+#ytid: 'UCCcmjqMEF_JvwKqr5JjMZgQ', 
+#site_color: '#E6343E', 
+#favurl: 'https://www.youtube.com/favicon.ico', 
+#have_image: true 
+#unless Site.find_by(name: 'Michał Sikorski')
+
+ytchannels.each do |ytchannel|
+  ch = Yt::Channel.new(url: ytchannel) 
+  Site.where(ytid: ch.id).first_or_create do |site|
+    site.name = ch.title
+    site.ytid = ch.id
+    site.ytchannel = true
+    site.have_image = true
+    site.site_color = '#E6343E'
+    site.favurl = 'https://www.youtube.com/favicon.ico'
+    p site.name + ' zostałą utworzona'
+  end
+end
+
+
+##################################################################
+
   #YouTube channels 
   #ytchannels_ids = ['UCCcmjqMEF_JvwKqr5JjMZgQ', 'UCTISYi9ABujrrI1Slg3ZDBA']
-  ytchannels_ids = Site.all.pluck(:ytid).compact!
+  ytchannels_ids = Site.all.pluck(:ytid)
   ytchannels_ids.each do |ytchannel_id|
     p "Pobieram dane ze strony" + ytchannel_id
     ytids = []
