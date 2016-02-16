@@ -926,15 +926,20 @@ figure.effect-duke:hover h3 {
 }
 
 figcaption {
+  .silver {
+    position: absolute;
+    top: 150px;
+    left: 21px;
+  }
   .green {
     position: absolute;
     top: 150px;
-    left: 40px;
+    left: 134px;
   }
 
   .red {
     position: absolute;
     top: 150px;
-    left: 160px;
+    left: 173px;
   }
 }
