@@ -81,7 +81,6 @@
                 <div key={site.id} className="threColumns">
                   <Site id={site.id} site={site} articles={site.articles} all_site={@props.all_site} />
                 </div>
-
             else
               <h1>Merry Christmas</h1>
           }

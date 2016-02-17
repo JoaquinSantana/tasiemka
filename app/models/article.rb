@@ -25,6 +25,9 @@
 
 class Article < ActiveRecord::Base
   default_scope { order("dodano DESC") }
+
+  acts_as_votable
+
   belongs_to :site
   belongs_to :category
 

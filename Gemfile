@@ -31,6 +31,7 @@ gem 'yt'
 gem 'underscore-rails'
 gem 'typedjs-rails', '~> 1.0.3'
 
+
 group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
