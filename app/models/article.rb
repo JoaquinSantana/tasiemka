@@ -21,17 +21,41 @@
 #  view           :integer
 #  like           :integer
 #  category_title :string
+#  vote_up        :integer          default(0)
+#  vote_down      :integer          default(0)
+#  votesum        :integer          default(0)
 #
 
 class Article < ActiveRecord::Base
   default_scope { order("dodano DESC") }
-
-  acts_as_votable
-
   belongs_to :site
   belongs_to :category
 
   def article_visit_comming
     self.visits_count += 1
   end
+
+  def vote(vote_type, ip, last_vote, voted_articles)
+    if vote_type == 'plus'
+      self.vote_up += 1
+      save
+    elsif vote_type == 'minus'
+      self.vote_down += 1
+      save
+    end
+    calculate_votes if have_permission?(voted_articles)
+  end
+
+  private
+  def calculate_votes
+    new_count_votes = vote_up - vote_down
+    self.update!(votesum: new_count_votes)
+  end
+
+  def have_permission?(voted_articles)
+    if voted_articles
+      voted_articles.include? self.id
+    end
+  end
+
 end

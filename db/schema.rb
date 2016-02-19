@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151207130130) do
+ActiveRecord::Schema.define(version: 20160217122249) do
 
   create_table "articles", force: :cascade do |t|
     t.text     "title"
@@ -32,11 +32,15 @@ ActiveRecord::Schema.define(version: 20151207130130) do
     t.integer  "view"
     t.integer  "like"
     t.string   "category_title"
+    t.integer  "vote_up",        default: 0
+    t.integer  "vote_down",      default: 0
+    t.integer  "votesum",        default: 0
   end
 
   add_index "articles", ["article_url"], name: "index_articles_on_article_url"
   add_index "articles", ["site_id"], name: "index_articles_on_site_id"
   add_index "articles", ["title"], name: "index_articles_on_title"
+  add_index "articles", ["votesum"], name: "index_articles_on_votesum"
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"

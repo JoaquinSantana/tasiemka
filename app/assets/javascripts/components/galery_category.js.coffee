@@ -104,8 +104,8 @@
             <GaleryCategoryForm key={@state.category.id} options={@allCategories()} categoryName={@state.category.name} handleChangeCategorySite={@changeCategory} handleChangeSite={@changeSite} category={@state.category}/>
           </div>
           <div className="col-md-4 pull-right">
-            <button onClick={@handleSortbyLike} className="ui inverted icon button red"><i className="empty heart icon"></i></button>
-            <button onClick={@handleSortbyView} className="ui inverted icon button yellow"><i className="empty star icon"></i></button>
+            <button onClick={@handleSortbyLike} className="ui red basic icon button"><i className="empty heart icon"></i></button>
+            <button onClick={@handleSortbyView} className="ui yellow basic icon button"><i className="empty star icon"></i></button>
           </div>
         </div>
         <div className='articles' ref='articlesref'>

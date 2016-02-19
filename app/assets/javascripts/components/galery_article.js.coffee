@@ -10,6 +10,26 @@
         return false
       error:(data) ->
         return false
+  handleVoteUp: ->
+    $.ajax
+      type: "PATCH",
+      url: "/voteup",
+      data: { id: @props.article.id }
+      success:(data) ->
+        console.log("The vote(+) has added")
+        return false
+      error:(data) ->
+        return false
+  handleVoteDown: ->
+    $.ajax
+      type: "PATCH",
+      url: "/votedown",
+      data: { id: @props.article.id }
+      success:(data) ->
+        console.log("The vote(-) has added")
+        return false
+      error:(data) ->
+        return false
   showModal: ->
     $(window).trigger('modal.visible', @props.article)
   render: ->
@@ -41,13 +61,13 @@
             <button onClick={@showModal} className="ui inverted icon button silver">
               <i className="fa fa-play-circle-o"></i>
             </button>
-            <button className="ui inverted icon button green">
-              <i className="fa fa-thumbs-o-up"></i>
-            </button>
-            <button className="ui inverted icon button red">
-              <i className="fa fa-thumbs-o-down"></i>
-            </button>
           </p>
         </figcaption> 
       </figure>
     </div>
+###<button onClick={@handleVoteUp} className="ui inverted icon button green">
+  <i className="fa fa-thumbs-o-up"></i>
+</button>
+<button onClick={@handleVoteDown} className="ui inverted icon button red">
+  <i className="fa fa-thumbs-o-down"></i>
+</button>###

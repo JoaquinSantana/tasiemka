@@ -32,4 +32,36 @@ class ArticlesController < ApplicationController
       render json: { element: 'last' }
     end
   end
+
+  def voteup
+    article = Article.find(params[:id])
+    if article
+      ip = session[:user_ip]
+      last_vote = session[:last_vote]
+      voted_articles = session[:user][:voted_articles]
+      article.vote('plus', ip, last_vote, voted_articles)
+      session[:last_vote] = 'plus'
+      session[:user] = {voted_articles: []} unless session[:user][:voted_articles]
+      session[:user][:voted_articles] << article.id
+      render json: { nothing: true, status: 200, content_type: 'text/html' }
+    else
+      render json: article.errors, status: :unprocessable_entity
+    end
+  end
+
+  def votedown
+    article = Article.find(params[:id])
+    if article
+      ip = session[:user_ip]
+      last_vote = session[:last_vote]
+      session[:users] = {va: []} 
+      session[:voted_articles]
+      article.vote('minus', ip, last_vote, voted_articles)
+      session[:user_ip] = request.remote_ip
+      session[:last_vote] = 'minus'
+      render json: { nothing: true, status: 200, content_type: 'text/html' }
+    else
+      render json: article.errors, status: :unprocessable_entity
+    end
+  end
 end

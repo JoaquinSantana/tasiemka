@@ -42,15 +42,13 @@
               </div>
               <div className="layoutlist list-unstyled">
                 <li className="text-center" onClick={@changeLayout.bind(this, '1-kol')}>
-                  <h3>Jedna kolumna</h3>
+                  <h2>Layout</h2>
                   <i className="fa fa-align-justify">{active1}</i>
                 </li>
                 <li className="text-center" onClick={@changeLayout.bind(this, '2-kol')}>
-                  <h3>Dwie kolumny</h3>
                   <i className="fa fa-th-list">{active2}</i>
                 </li>
                 <li className="text-center" onClick={@changeLayout.bind(this, '3-kol')}>
-                  <h3>Trzy kolumny</h3>
                   <i className="fa fa-th">{ active3 }</i>
                 </li>
                 <li className="text-center facebook_like">

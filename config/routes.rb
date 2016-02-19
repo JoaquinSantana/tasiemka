@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/get_articles_from_category/:id', to: 'articles#get_articles_from_category'
   get '/about', to: 'staticsites#about'
   patch '/view_count', to: 'sites#view_count'
+  patch '/voteup', to: 'articles#voteup'
+  patch '/votedown', to: 'articles#votedown'
   
   root 'sites#index'
 end

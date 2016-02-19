@@ -28,14 +28,18 @@
       text.fadeIn("slow")
       setTimeout ->
           $('#showmsg').fadeOut("slow")
-      , 2500
+      , 2500 
   showModal: ->
     $(window).trigger('modal.visible')
   render: ->
     newsletter = 
       <div className="item text-center kontakt" onClick={@showModal}>
-        <button className="ui button inverted red">Kontakt</button>
-      </div> 
+        <button className="ui blue basic button">Kontakt</button>
+      </div>
+    top = 
+      <div className="item text-center kontakt">
+        <button className="ui purple basic button">Ranking</button>
+      </div>  
     facebook_link = 
       <div className="item text-center" data-content="Zobacz nasz profil na Facebooku">
         <a href="https://www.facebook.com/tasiemka.info">
@@ -50,7 +54,9 @@
       </div>
     sidebar = 
       <div className="item" id='knefel' data-content="Ustawienia">
-        <i className="sidebar icon"></i>
+        <button className="ui green basic icon button">
+          <i className="sidebar icon"></i>
+        </button>
       </div>
     thanksmsg = 
       <div className="ui floating message purple" id='showmsg'>
@@ -63,6 +69,7 @@
         </div>
       {thanksmsg}
       <div className="right menu">
+        {top}
         {newsletter}
         {sidebar}
       </div>

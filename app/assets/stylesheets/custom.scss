@@ -426,7 +426,9 @@ i.sidebar {
   }
 
   .kontakt {
-    margin-right: 55px;
+    margin-right: 0px;
+    padding-right: 2px;
+    padding-left: 2px;
     button.inverted.red {
       color: darken($pink_maincolor, 20%);
       box-shadow: 0px 0px 0px 2px $pink_maincolor inset !important;
@@ -942,4 +944,9 @@ figcaption {
     top: 150px;
     left: 173px;
   }
+}
+
+
+#knefel {
+  padding-left: 2px;
 }
