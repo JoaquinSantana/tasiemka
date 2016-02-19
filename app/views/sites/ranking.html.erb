@@ -29,27 +29,12 @@
         
         <div class="ui basic modal">
           <i class="close icon"></i>
-          <div class="header">
-            Archive Old Messages
+
+          <div class="ui center aligned header">
+            <i class="close icon"></i>
           </div>
-          <div class="image content">
-            <div class="image">
-              <i class="archive icon"></i>
-            </div>
-            <div class="description">
-              <p>Your inbox is getting full, would you like us to enable automatic archiving of old messages?</p>
-            </div>
-          </div>
-          <div class="actions">
-            <div class="two fluid ui inverted buttons">
-              <div class="ui red basic inverted button">
-                <i class="remove icon"></i>
-                No
-              </div>
-              <div class="ui green basic inverted button">
-                <i class="checkmark icon"></i>
-                Yes
-              </div>
+          <div class="content">
+            <div class="ui embed" data-source="youtube" data-id="<%= article.ytid %>" data-placeholder="<%= article.thumbnail_url %>">
             </div>
           </div>
         </div>

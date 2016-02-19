@@ -54,9 +54,11 @@ ready = function() {
     $(this).find('.modal').modal('setting', {
       onHide: function () {
         modalwindow.appendTo(row);
+      },
+      onShow: function () {
+        $(this).find('.content .ui.embed').embed();
       }
     }).modal('show');
-    $(this).find('.modal').modal('show');
   });
 
 };
