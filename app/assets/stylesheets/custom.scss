@@ -970,7 +970,9 @@ figcaption {
 
 
   .popular_video {
+    box-shadow: none !important;
     padding-top: 30px;
+    margin-bottom: 10px;
     border-radius: 5px;
     display: block;
     font-weight: 300;
@@ -1001,3 +1003,7 @@ figcaption {
     }
   }
 }
+.popular_video.ui.basic.button {
+  box-shadow: none !important;
+}
+

@@ -23,27 +23,59 @@
     </div>
   </div>
   <div class="container">
-    <a href="/episodes/in-app-messaging-between-users?autoplay=1" class="popular_video ui purple basic button">
+    <% @articles.each do |article| %>
 
-      <div class="row">
-
-        <div class="col-sm-2 hidden-xs">
-          <img alt="Bec1be2eba33fe80b594ef522fe0d18bc56ac727" src="https://embed-ssl.wistia.com/deliveries/bec1be2eba33fe80b594ef522fe0d18bc56ac727.jpg?image_crop_resized=400x240" class="img-responsive">
-        </div>
-
-        <div class="col-sm-9 col-xs-12">
-          <h3 style="margin-top:0px">In-App Messages Between Users</h3>
-          <p class="text-muted">Learn how to send messages between users with the Mailboxer gem</p>
-          
-        </div>
-
-        <div class="col-sm-1 hidden-xs">
-          <div class="popular_article_like">
-            <div><i class="fa fa-heart"></i> <small>7</small></div>
+      <div class="popular_video ui <%= cycle("violet", "blue", "teal", "green", "olive", "yellow", " yellow", "pink", "purple", "orange", "red") -%> basic button">
+        
+        <div class="ui basic modal">
+          <i class="close icon"></i>
+          <div class="header">
+            Archive Old Messages
+          </div>
+          <div class="image content">
+            <div class="image">
+              <i class="archive icon"></i>
+            </div>
+            <div class="description">
+              <p>Your inbox is getting full, would you like us to enable automatic archiving of old messages?</p>
+            </div>
+          </div>
+          <div class="actions">
+            <div class="two fluid ui inverted buttons">
+              <div class="ui red basic inverted button">
+                <i class="remove icon"></i>
+                No
+              </div>
+              <div class="ui green basic inverted button">
+                <i class="checkmark icon"></i>
+                Yes
+              </div>
+            </div>
           </div>
         </div>
 
+
+
+        <div class="row">
+
+          <div class="col-sm-2 hidden-xs">
+            <img alt="Bec1be2eba33fe80b594ef522fe0d18bc56ac727" src="<%= article.thumbnail_url %>" class="img-responsive">
+          </div>
+
+          <div class="col-sm-9 col-xs-12">
+            <h3 style="margin-top:0px"><%=h truncate(article.title, :length => 60) %></h3>
+            <p class="text-muted"><%= article.site.name %></p>
+            
+          </div>
+
+          <div class="col-sm-1 hidden-xs">
+            <div class="popular_article_like">
+              <div><i class="fa fa-heart"></i> <small><%= article.like %></small></div>
+            </div>
+          </div>
+
+        </div>
       </div>
-    </a>
+    <% end %>
   </div>
 </div>

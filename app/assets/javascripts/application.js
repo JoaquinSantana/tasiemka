@@ -47,6 +47,18 @@ ready = function() {
     showCursor: true,
     cursorChar: "|",
   });
+
+  $('.basic.button').click(function(){
+    var modalwindow = $(this).find('.modal').clone();
+    var row = $(this).find('.row');
+    $(this).find('.modal').modal('setting', {
+      onHide: function () {
+        modalwindow.appendTo(row);
+      }
+    }).modal('show');
+    $(this).find('.modal').modal('show');
+  });
+
 };
 
 $(document).ready(ready);

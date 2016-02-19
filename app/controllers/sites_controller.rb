@@ -36,6 +36,6 @@ class SitesController < ApplicationController
   end
 
   def ranking
-
+    @articles = Article.all.sort_by(&:like).reverse.first(20)
   end
 end
