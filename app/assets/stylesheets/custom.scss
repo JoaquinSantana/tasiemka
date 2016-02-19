@@ -950,3 +950,54 @@ figcaption {
 #knefel {
   padding-left: 2px;
 }
+
+.ui.menu a.item:hover {
+  background: none;
+}
+
+.ranking_wrapper {
+  .right.menu {
+    margin-right: 10px;
+  }
+
+  .ui.large.menu {
+    //background: $navbar_dark;
+  }
+
+  .jumbotron {
+    background: #F4F4F4;
+  }
+
+
+  .popular_video {
+    padding-top: 30px;
+    border-radius: 5px;
+    display: block;
+    font-weight: 300;
+    min-height: 120px;
+    padding: 40px;
+    position: relative;
+    text-align: left;
+    transition: background 0s ease 0s, all 0.1s ease 0s;
+
+    h3 {
+      color: #444;
+      font-size: 2em;
+      margin: 0;
+      padding: 0 0 5px;
+    }
+
+    p {
+      font-weight: 500;
+      line-height: 1.25;
+      margin: 0 0 10px;
+      padding: 0;
+    }
+    .popular_article_like {
+      font-weight: 500;
+      line-height: 1.25;
+      margin: 30px 0 10px;
+      padding: 0;
+    }
+  }
+}

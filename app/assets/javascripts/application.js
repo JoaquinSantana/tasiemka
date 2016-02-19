@@ -37,6 +37,16 @@ var Infinite = require('react-infinite');
 var ready;
 ready = function() {
   analytics.page();
+
+  $(".better").typed({
+    strings: ["site ^1000", "side ^1000"],
+    typeSpeed: 50,
+    backDelay: 4000,
+    loop: true,
+    loopCount: false,
+    showCursor: true,
+    cursorChar: "|",
+  });
 };
 
 $(document).ready(ready);

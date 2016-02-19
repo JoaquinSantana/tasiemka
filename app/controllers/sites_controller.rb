@@ -34,4 +34,8 @@ class SitesController < ApplicationController
       render json: site.errors, status: :unprocessable_entity
     end
   end
+
+  def ranking
+
+  end
 end
