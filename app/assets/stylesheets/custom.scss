@@ -643,12 +643,11 @@ body > div.about_wrapper > div.info_panel > div.col-md-8.col-md-offset-2 > a {
 }
 
 /* MODAL NEWSLETTER */
-html body div.sites_component div.front_site.pushable div.pusher div.ui.dimmer.modals.page.transition.visible.active div.ui.small.modal.transition.visible.active {
-  top: 1em;
+html body div.sites_component div.front_site.pushable div.pusher div.ui.dimmer.modals.page.transition.visible.active div.ui.small.modal.transition.visible.active.hello {
   margin-top: auto;
   margin-bottom: auto;
-  min-height: 400px;
-  height: 50%;
+  top: 100px;
+  height: 468px;
 }
 /* MOdal navbar button input */
 html body div.sites_component div.front_site.pushable div.pusher div.ui.dimmer.modals.page.transition.visible.active div.ui.small.modal.transition.visible.active div.content form.ui.form div.two.fluid.ui.inverted.button {
@@ -686,6 +685,7 @@ body > div.sites_component > div > div.pusher > div.ui.dimmer.modals.page.transi
   .content {
     position: relative;
     .invalid {
+      position: absolute;
       text-align: center;
       top: 0;
       left: 0;
@@ -1007,3 +1007,17 @@ figcaption {
   box-shadow: none !important;
 }
 
+.popular_video {
+  .modal {
+    background: red !important;
+      //height: 568px;
+      margin-top: auto !important;
+      margin-bottom: auto;
+  }
+}
+
+
+.hello {
+  margin-top: auto;
+  top: 60px !important;
+}

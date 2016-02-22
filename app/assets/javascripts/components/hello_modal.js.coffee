@@ -60,9 +60,9 @@
     if @state.ytmodal
       console.log(@state.article)
       if @state.visible
-        modal_classes = 'ui small basic modal transition visible active'
+        modal_classes = 'ui basic modal transition visible active hello'
       else
-        modal_classes = 'ui small basic modal transition hidden'
+        modal_classes = 'ui basic modal transition hidden hello'
       <div className={modal_classes}>
         <div className="ui center aligned header">
           <i className="close icon" onClick={@hideModal}></i>
