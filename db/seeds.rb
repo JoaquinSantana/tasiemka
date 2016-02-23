@@ -4,5 +4,5 @@ categories.each do |category|
 end
 Article.all.each do |article| 
   article.update(category: Category.find_by(name: article.category_title))
-  p "update article"
+  p "update article" + article.title
 end

@@ -1,5 +1,5 @@
 set :stage, :production
-server '46.101.158.27', user: 'panczo', roles: %w{web app}
+server '46.101.192.214', user: 'panczo', roles: %w{web app}
 
 namespace :deploy do
   desc "Update crontab with whenever"

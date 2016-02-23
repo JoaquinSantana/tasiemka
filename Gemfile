@@ -44,7 +44,7 @@ end
 group :development do
   gem 'capistrano', '~> 3.4.0'
   gem 'capistrano-rails', '~> 1.1.3'
-  gem 'capistrano-rbenv', '~> 2.0.3'
+  gem 'capistrano-rvm', '~> 0.1.2'
   gem 'capistrano-passenger'
   #gem 'pry-rails'
 end
