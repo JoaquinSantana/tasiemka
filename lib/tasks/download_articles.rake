@@ -37,7 +37,7 @@ ytchannels.each do |ytchannel|
     site.have_image = true
     site.site_color = '#E6343E'
     site.favurl = 'https://www.youtube.com/favicon.ico'
-    p site.name + ' zostałą utworzona'
+    p site.name + ' została utworzona'
   end
 end
 
