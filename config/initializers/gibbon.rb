@@ -4,6 +4,6 @@ if Rails.env.test?
 end
 
 
-Gibbon::Request.api_key = 'b1bd6d470d0b689455d3fea0cf22a52c-us9'
+Gibbon::Request.api_key = Rails.application.secrets.gibbonapiid
 Gibbon::Request.timeout = 15
 Gibbon::Request.throws_exceptions = false

@@ -7,7 +7,7 @@ task :download_articles => :environment do
   require 'yt'
 
   Yt.configure do |config|
-    config.api_key = 'AIzaSyAduz-sG_N0GPRtqOrsJZa6Ft1LvcO5Yro'
+    config.api_key = Rails.application.secrets.ytapiid
     config.log_level = :debug
   end
 
