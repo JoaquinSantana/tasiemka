@@ -29,7 +29,7 @@ gem 'gibbon'
 gem 'yt'
 gem 'underscore-rails'
 gem 'typedjs-rails', '~> 1.0.3'
-gem 'puma'
+gem 'unicorn'
 
 group :development, :test do
   gem 'sqlite3'
