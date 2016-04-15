@@ -1,2 +1,2 @@
-- @sites ||= Site.all
-= react_component 'Sites', render(template: 'sites/index.json.jbuilder'), categories: @categories, all_categories: @categoriesname, all_site: @sites, videosite: @videosite, class: "sites_component"
+- @sites ||= Site.all.limit(30)
+= react_component 'Sites', render(template: 'sites/index.json.jbuilder'), categories: @categories, all_categories: @categoriesname, all_site: @sites`, videosite: @videosite, class: "sites_component"
