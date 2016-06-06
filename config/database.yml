@@ -8,8 +8,12 @@ connection: &connection
 
 development:
   <<: *connection
-  database: workshops_development
+  database: tasiemka_development
 
 test: &test
   <<: *connection
-  database: workshops_test
+  database: tasiemka_test
+
+production:
+  <<: *connection
+  database: tasiemka_production
