@@ -1,12 +1,6 @@
 # @cjsx React.DOM
 
 @Article = React.createClass
-  handleEnter: (e) ->
-    b = this.refs.articleref.getDOMNode()
-    $(b).find('.article_num').transition('pulse')
-  handleLeave: (e) ->
-    b = this.refs.articleref.getDOMNode()
-    $(b).find('.article_num').css("background", @props.site.site_color)
   handleViewCount: ->
     $.ajax
       type: "PATCH",

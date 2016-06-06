@@ -65,9 +65,3 @@
         </figcaption> 
       </figure>
     </div>
-###<button onClick={@handleVoteUp} className="ui inverted icon button green">
-  <i className="fa fa-thumbs-o-up"></i>
-</button>
-<button onClick={@handleVoteDown} className="ui inverted icon button red">
-  <i className="fa fa-thumbs-o-down"></i>
-</button>###

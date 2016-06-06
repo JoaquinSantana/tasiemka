@@ -7,12 +7,6 @@
     all_categories: @props.all_categories
     styles: { "layout": "2-kol" }
   componentDidMount: ->
-    rootNode = React.findDOMNode(this)
-
-    $(rootNode).find('.ui.sidebar').sidebar({
-       context: $(rootNode)
-    })
-
     $('#close_sidebar').click (e) ->
       e.stopPropagation()
       $('.ui.sidebar').sidebar('toggle')
@@ -21,14 +15,12 @@
     styles: { "layout": "2-kol" }
   changeLayout: (e) ->
     @setState styles: { "layout": e }
-    console.log("Zmiana layoutu na:" + e)
   showModal: ->
     $(window).trigger('modal.visible')
   render: ->
     active1 = <Active /> if @state.styles.layout == '1-kol'
     active2 = <Active /> if @state.styles.layout == '2-kol'
     active3 = <Active /> if @state.styles.layout == '3-kol'
-      
     <div className='front_site' style={{"color": "red"}}>
       <div className="ui sidebar right inverted vertical menu">
         <div className="row ui large menu inverted hidden_menu">
@@ -61,7 +53,7 @@
       </div>
       <div className="pusher" style={{"background": "white"}}>
         <Navbar />
-        <NewsletterPage />
+        <HelloModal />
         <div className="sites_wrapper">
           { 
             if @state.styles.layout == '1-kol'
@@ -80,7 +72,7 @@
                   <Site id={site.id} site={site} articles={site.articles} all_site={@props.all_site} />
                 </div>
             else
-              <h1>Merry Christmas</h1>
+              <h1>Ups.. you have reached the end of internet :)</h1>
           }
         </div>
       </div>

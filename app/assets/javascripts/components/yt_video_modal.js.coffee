@@ -8,6 +8,7 @@
   
     $(window).on 'ytmodal.hidden', (e) ->
       self.setState(self.getInitialState())
+
   hideModal: (e) ->
     $(window).trigger('ytmodal.hidden')
   handleSubscribe: (e) ->

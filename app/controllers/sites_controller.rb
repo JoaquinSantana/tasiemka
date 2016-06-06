@@ -6,6 +6,7 @@ class SitesController < ApplicationController
     @categoriesname = Category.all.order(:id)
     @videosite = Site.all.order(:id).where(ytchannel: true).first
     @sitesname = Site.all.order(:id).limit(30)
+
   end
 
   def load_article

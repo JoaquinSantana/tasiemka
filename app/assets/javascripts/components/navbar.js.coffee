@@ -32,10 +32,6 @@
   showModal: ->
     $(window).trigger('modal.visible')
   render: ->
-    newsletter = 
-      <div className="item text-center kontakt" onClick={@showModal}>
-        <button className="ui blue basic button">Kontakt</button>
-      </div>
     ranking = 
       <a href="ranking" className="item text-center kontakt">
         <button className="ui purple basic button">Ranking</button>
@@ -70,7 +66,6 @@
       {thanksmsg}
       <div className="right menu">
         {ranking}
-        {newsletter}
         {sidebar}
       </div>
     </div>

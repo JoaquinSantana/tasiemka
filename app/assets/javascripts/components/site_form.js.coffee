@@ -19,9 +19,7 @@
     $('.ui.dropdown')
       .dropdown()
     ;
-    rootNode = React.findDOMNode(this)
-
-    $(rootNode).find('.ui .dropdown').dropdown(
+    $('.ui .dropdown').dropdown(
       onChange: (value) =>
         @props.handleChangeSite(value)
     );
