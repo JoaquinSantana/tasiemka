@@ -4,12 +4,6 @@ lock '3.1.0'
 set :application, 'tasiemka'
 set :repo_url, 'git@github.com:Panczo/tasiemka.git'
 
-
-set :deploy_to, '/home/panczo/tasiemka'
-
-set :linked_files, %w{config/database.yml}
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
@@ -39,6 +33,10 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+
+set :deploy_to, '/home/panczo/tasiemka'
+set :linked_files, %w{config/database.yml}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 namespace :deploy do
 
