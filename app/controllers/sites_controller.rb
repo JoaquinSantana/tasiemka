@@ -37,6 +37,8 @@ class SitesController < ApplicationController
   end
 
   def ranking
-    @articles = Article.all.sort_by(&:like).reverse.first(20)
+    art = []
+    Category.all.each{|c| art << c.articles.sort_by(&:like).reverse.first(3)}
+    @articles = art.flatten.sort_by(&:like).first(20)
   end
 end
