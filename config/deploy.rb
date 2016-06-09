@@ -1,8 +1,14 @@
-# config valid only for Capistrano 3.1
-lock '3.4.0'
+# config valid only for Capistrano 3.4
+lock '3.4.1'
+
 
 set :application, 'tasiemka'
 set :repo_url, 'git@github.com:Panczo/tasiemka.git'
+
+set :deploy_to, '/home/panczo/tasiemka'
+
+set :linked_files, %w{config/database.yml config/application.yml config/secrets.yml}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
@@ -33,10 +39,6 @@ set :repo_url, 'git@github.com:Panczo/tasiemka.git'
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
-
-set :deploy_to, '/home/panczo/tasiemka'
-set :linked_files, %w{config/database.yml}
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 namespace :deploy do
 

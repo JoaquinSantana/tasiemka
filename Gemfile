@@ -32,20 +32,18 @@ gem 'typedjs-rails', '~> 1.0.3'
 gem 'unicorn'
 gem 'figaro'
 
+gem 'pg'
+gem 'capistrano', '~> 3.4.0'
+gem 'capistrano-bundler', '~> 1.1.2'
+gem 'capistrano-rails', '~> 1.1.3'
+gem 'capistrano-rbenv', github: "capistrano/rbenv"
+
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails'
   gem 'database_cleaner', '~> 1.5.0'
   gem 'pry-byebug'
-end
-
-group :production do
-  gem 'capistrano', '~> 3.4.0'
-  gem 'capistrano-bundler', '~> 1.1.2'
-  gem 'capistrano-rails', '~> 1.1.3'
-  gem 'capistrano-rbenv', github: 'capistrano/rbenv'
 end
