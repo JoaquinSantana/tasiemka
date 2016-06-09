@@ -1,0 +1,24 @@
+{
+  "name": "tasiemka",
+  "version": "1.0.0",
+  "description": "== README",
+  "main": "index.js",
+  "dependencies": {
+    "browserify": "^6.3.4",
+    "browserify-incremental": "^1.5.0",
+    "coffeeify": "^0.6.0",
+    "react": "^0.13.3",
+    "react-infinite": "^0.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://panczo@bitbucket.org/panczo/tasiemka.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/panczo/tasiemka#readme"
+}
