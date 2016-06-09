@@ -81,7 +81,8 @@ end
       )
     end
   end
-  
+articles_without_like = Article.all.where(like: nil)
+articles_without_like.update_all(like: 0)
   
   #PUDELEK
 =begin
