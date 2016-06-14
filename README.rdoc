@@ -6,42 +6,42 @@ Application allows users to search and watch quality video material. Users can e
 Check this site on: http://tasiemka.info/
 
 
-#Functionalities
+# Functionalities
 
-###Core:
+#### Core:
 * play YouTube video
 * search through almost 150 valuable yt channels
 * change layout depend your preferences
 * ranking videos 
 * search for channels
 
-###Future improvements:
+#### Future improvements:
 * search by tags
 * voting system
 * add your channel
 
 
-#Technologies
+# Technologies
 
-###Core:
+#### Core:
 * `Ruby [2.3.1]`
 * `Rails [4.2.0]`
 * `ReactJs` [frontend]
 * `Postgres` [database]
 
-###Other:
+#### Other:
 * `Bootstrap` [Frontend framework]
 * `yt` [youtube integration]
 * `Carrierwave` [image upload system]
 * `Cloudinary` [image cloud storage]
 
-#Setup
+# Setup
 
-**Source code**
+#### Source code
 
 Clone the repo (`git clone git@github.com:Panczo/tasiemka.git` ).
 
-**Database**
+#### Database
 
 Copy the database config file (and edit if needed): 
 ` cp config/database.yml.example config/database.yml`
@@ -49,7 +49,7 @@ Copy the database config file (and edit if needed):
 Setup the database:
 `bin/rake db:setup`
 
-**Secrets**
+#### Secrets
 
 Define your `secrets.yml` file and format your data like that (see `config.yml` as an example):
 ```
@@ -59,8 +59,7 @@ ytapiid: 123
 
 *Note*: In order to use Youtube authentication you need to have accountin this platform. 
 
-**Install, run and have fun**
-
 `bundle install`
 `rails s`
+
 *Note*: To configure react-rails gem look at official repo.
