@@ -1,4 +1,4 @@
-== Tasiemka - Best YouTube content
+# Tasiemka - Best YouTube content
 
 *Tasiemka* is a aggregator site that collect the best video material from YouTube.
 
@@ -59,7 +59,9 @@ ytapiid: 123
 
 *Note*: In order to use Youtube authentication you need to have accountin this platform. 
 
-`bundle install`
-`rails s`
+```
+bundle install
+rails s
+```
 
 *Note*: To configure react-rails gem look at official repo.
