@@ -1,4 +1,4 @@
 == Best YouTube content
 
 Ruby on Rails + React.js
-Check this site on: https://tasiemka.herokuapp.com/
+Check this site on: http://tasiemka.info/
