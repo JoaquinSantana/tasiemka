@@ -1,5 +1,5 @@
+== Tasiemka - Best YouTube content
 
-#Tasiemka - Best YouTube content
 *Tasiemka* is a aggregator site that collect the best video material from YouTube.
 
 Application allows users to search and watch quality video material. Users can easily look at valuable video. They do not have to waste time for searching. 
